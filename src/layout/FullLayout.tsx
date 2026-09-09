@@ -1,35 +1,111 @@
+import { Link, Outlet, useLocation } from "react-router-dom";
 
 
 function FullLayout() {
+
+  const location = useLocation();
+
+  // Función auxiliar para resaltar el link activo
+  const isActive = (path: string) => location.pathname === path;
+
   return (
-    <section className="relative bg-white overflow-hidden py-12 md:py-16">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        <div className="lg:col-span-5 flex justify-center">
-          <img
-            src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&q=80&w=800"
-            alt="Perro y Gato"
-            className="w-full max-w-md object-cover rounded-2xl shadow-sm"
-          />
+    <div className="min-h-screen bg-gray-100 flex flex-col font-sans text-gray-800 antialiased">
+      
+      {/* NAVBAR PRINCIPAL */}
+      <header className="bg-white shadow-sm sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+          
+          {/* Logo y Nombre */}
+          <Link to="/" className="flex items-center space-x-3 group">
+            <div className="text-3xl text-[#f1883d] transition-transform group-hover:scale-105">
+              🐶
+            </div>
+            <div>
+              <h1 className="font-extrabold text-lg text-[#009ba4] leading-tight tracking-tight">
+                LUMEN
+              </h1>
+              <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">
+                TUCUMÁN
+              </p>
+            </div>
+          </Link>
+
+          {/* Navegación Desktop */}
+          <nav className="hidden md:flex items-center space-x-8 font-semibold text-sm">
+            <Link
+              to="/"
+              className={`transition-colors ${
+                isActive('/') ? 'text-[#f1883d]' : 'text-gray-600 hover:text-[#009ba4]'
+              }`}
+            >
+              Inicio
+            </Link>
+            <Link
+              to="/services"
+              className={`transition-colors ${
+                isActive('/services') ? 'text-[#f1883d]' : 'text-gray-600 hover:text-[#009ba4]'
+              }`}
+            >
+              Servicios
+            </Link>
+            <Link
+              to="/appointments"
+              className={`transition-colors ${
+                isActive('/appointments') ? 'text-[#f1883d]' : 'text-gray-600 hover:text-[#009ba4]'
+              }`}
+            >
+              Turnos
+            </Link>
+            <Link
+              to="/about"
+              className={`transition-colors ${
+                isActive('/about') ? 'text-[#f1883d]' : 'text-gray-600 hover:text-[#009ba4]'
+              }`}
+            >
+              Nosotros
+            </Link>
+            <Link
+              to="/contact"
+              className={`transition-colors ${
+                isActive('/contact') ? 'text-[#f1883d]' : 'text-gray-600 hover:text-[#009ba4]'
+              }`}
+            >
+              Contacto
+            </Link>
+          </nav>
+
+          {/* Botón Mi Mascota */}
+          <div>
+            <Link
+              to="/my-pet"
+              className="bg-[#009ba4] hover:bg-[#00838b] text-white font-bold text-sm px-5 py-2.5 rounded-full flex items-center space-x-2 shadow-sm transition-all active:scale-95"
+            >
+              <span>Mi Mascota</span>
+              <span>🐾</span>
+            </Link>
+          </div>
+
         </div>
+      </header>
 
-        <div className="lg:col-span-7 text-center lg:text-left space-y-6">
-          <h2 className="text-2xl md:text-4xl font-extrabold text-gray-800 uppercase tracking-tight leading-snug">
-            EL CUIDADO QUE TUS MASCOTAS SE MERECEN. ATENCIÓN VETERINARIA DE CONFIANZA EN TUCUMÁN.
-          </h2>
+      {/* CONTENIDO DINÁMICO (Vistas de la aplicación) */}
+      <main className="flex-1">
+        <Outlet />
+      </main>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-            <button className="w-full sm:w-auto bg-[#f1883d] text-white font-bold px-6 py-3.5 rounded-full shadow-md hover:opacity-90 transition flex items-center justify-center space-x-3">
-              <span>RESERVAR CITA PERRO</span>
-              <span>🐾</span>
-            </button>
-            <button className="w-full sm:w-auto bg-[#933577] text-white font-bold px-6 py-3.5 rounded-full shadow-md hover:opacity-90 transition flex items-center justify-center space-x-3">
-              <span>RESERVAR CITA GATO</span>
-              <span>🐾</span>
-            </button>
+      {/* FOOTER GLOBAL */}
+      <footer className="bg-white border-t border-gray-200 py-6 text-center text-xs text-gray-500">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p>© Veterinaria San Felipe & Santa Fe - San Miguel de Tucumán</p>
+          <div className="flex space-x-4 text-gray-400">
+            <a href="#" className="hover:text-[#009ba4] transition">Términos</a>
+            <a href="#" className="hover:text-[#009ba4] transition">Privacidad</a>
+            <a href="#" className="hover:text-[#009ba4] transition">Soporte</a>
           </div>
         </div>
-      </div>
-    </section>
+      </footer>
+
+    </div>
   );
 };
 

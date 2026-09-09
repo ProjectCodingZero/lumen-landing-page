@@ -33,8 +33,9 @@
     "vite": "npm:vite@^8.2.2",
 
     "@/": "./src/",
-    "@core/": "./src/core/",
-    "@assets/": "./src/core/assets/",
+    "@shared/": "./src/shared/",
+    "@assets/": "./src/shared/assets/",
+    "@features/": "./src/features/",
     "@layout/": "./src/layout/"
   }
 }

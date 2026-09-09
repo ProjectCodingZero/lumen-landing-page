@@ -1,4 +1,4 @@
-import React, {lazy, Suspense, useState} from 'react';
+import React, {lazy, Suspense} from 'react';
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 
 // Import layouts
@@ -34,7 +34,7 @@ export const router = createBrowserRouter([
                     <Suspense fallback={<LoadingFallback />}>
                         <HomeView />
                     </Suspense>
-                    )
+                )
             },
         ]    
     },
