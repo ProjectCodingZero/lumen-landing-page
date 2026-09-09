@@ -9,6 +9,7 @@
     "npm:@types/react@^19.2.18": "19.2.18",
     "npm:@vitejs/plugin-react@*": "6.1.1_vite@8.2.2_@types+node@26.5.0",
     "npm:@vitejs/plugin-react@^6.1.1": "6.1.1_vite@8.2.2_@types+node@26.5.0",
+    "npm:oxlint@*": "1.82.0",
     "npm:oxlint@^1.82.0": "1.82.0",
     "npm:react-dom@^19.2.8": "19.2.8_react@19.2.8",
     "npm:react-router-dom@^7.18.3": "7.18.3_react@19.2.8_react-dom@19.2.8",

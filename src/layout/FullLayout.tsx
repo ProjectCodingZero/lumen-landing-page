@@ -1,12 +1,10 @@
-import { Link, Outlet, useLocation } from "react-router-dom";
-
-
+import {Outlet } from "react-router-dom";
+import { useIsActive } from "@shared/hooks/useIsActive.ts";
+import { Link } from "@shared/components/Link.tsx";
+const linkStyle = (isActive: boolean) => `transition-colors ${isActive ? 'text-[#f1883d]' : 'text-gray-600 hover:text-[#009ba4]'}`;
 function FullLayout() {
 
-  const location = useLocation();
-
-  // Función auxiliar para resaltar el link activo
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = useIsActive();
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col font-sans text-gray-800 antialiased">
@@ -34,41 +32,31 @@ function FullLayout() {
           <nav className="hidden md:flex items-center space-x-8 font-semibold text-sm">
             <Link
               to="/"
-              className={`transition-colors ${
-                isActive('/') ? 'text-[#f1883d]' : 'text-gray-600 hover:text-[#009ba4]'
-              }`}
+              className={linkStyle(isActive('/home'))}
             >
               Inicio
             </Link>
             <Link
               to="/services"
-              className={`transition-colors ${
-                isActive('/services') ? 'text-[#f1883d]' : 'text-gray-600 hover:text-[#009ba4]'
-              }`}
+              variant={`${isActive('/services') ? 'navbar_active' : 'navbar_inactive'}`}
             >
               Servicios
             </Link>
             <Link
               to="/appointments"
-              className={`transition-colors ${
-                isActive('/appointments') ? 'text-[#f1883d]' : 'text-gray-600 hover:text-[#009ba4]'
-              }`}
+              variant={`${isActive('/appointments') ? 'navbar_active' : 'navbar_inactive'}`}
             >
               Turnos
             </Link>
             <Link
               to="/about"
-              className={`transition-colors ${
-                isActive('/about') ? 'text-[#f1883d]' : 'text-gray-600 hover:text-[#009ba4]'
-              }`}
+              variant={`${isActive('/about') ? 'navbar_active' : 'navbar_inactive'}`}
             >
               Nosotros
             </Link>
             <Link
               to="/contact"
-              className={`transition-colors ${
-                isActive('/contact') ? 'text-[#f1883d]' : 'text-gray-600 hover:text-[#009ba4]'
-              }`}
+              variant={`${isActive('/contact') ? 'navbar_active' : 'navbar_inactive'}`}
             >
               Contacto
             </Link>

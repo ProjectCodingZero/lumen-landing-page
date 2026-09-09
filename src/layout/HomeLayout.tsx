@@ -1,7 +1,7 @@
-import { HeroSection } from '@features/home/components/HeroSection';
-import { BookingStepCard } from '@features/home/components/BookingStepCard';
-import { LocationAndReviewsCard } from '@features/home/components/LocationAndReviewsCard';
-import { useTitle } from '@shared/hooks/useTitle';
+import { HeroSection } from '@features/home/components/HeroSection.tsx';
+import { BookingStepCard } from '@features/home/components/BookingStepCard.tsx';
+import { LocationAndReviewsCard } from '@features/home/components/LocationAndReviewsCard.tsx';
+import { useTitle } from '@shared/hooks/useTitle.ts';
 function HomeLayout() {
   const setTitle = useTitle();
   setTitle('Inicio - Lumen');

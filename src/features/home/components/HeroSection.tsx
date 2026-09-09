@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from "@shared/components/Button.tsx";
 
 function HeroSection() {
     return (
@@ -18,14 +19,14 @@ function HeroSection() {
           </h2>
 
           <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-            <button className="w-full sm:w-auto bg-[#f1883d] text-white font-bold px-6 py-3.5 rounded-full shadow-md hover:opacity-90 transition flex items-center justify-center space-x-3">
+            <Button variant="primary" size="md" className="w-full sm:w-auto bg-[#f1883d] text-white font-bold px-6 py-3.5 rounded-full shadow-md hover:opacity-90 transition flex items-center justify-center space-x-3">
               <span>RESERVAR CITA PERRO</span>
               <span>🐾</span>
-            </button>
-            <button className="w-full sm:w-auto bg-[#933577] text-white font-bold px-6 py-3.5 rounded-full shadow-md hover:opacity-90 transition flex items-center justify-center space-x-3">
+            </Button>
+            <Button variant="secondary" size="md" className="w-full sm:w-auto bg-[#933577] text-white font-bold px-6 py-3.5 rounded-full shadow-md hover:opacity-90 transition flex items-center justify-center space-x-3">
               <span>RESERVAR CITA GATO</span>
               <span>🐾</span>
-            </button>
+            </Button>
           </div>
         </div>
       </div>
