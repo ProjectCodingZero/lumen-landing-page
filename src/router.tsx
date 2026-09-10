@@ -1,4 +1,4 @@
-import React, {lazy, Suspense} from 'react';
+import {lazy, Suspense} from 'react';
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 import { LoadingFallback } from '@shared/components/LoadingFallback.tsx';
 // Import layouts
@@ -8,10 +8,6 @@ import FullLayout from "@/layout/FullLayout.tsx";
 const HomeView = lazy(() =>
   import('@layout/HomeLayout.tsx').then((module) => ({ default: module.default }))
 );
-const DefaultLayout = lazy(() =>
-  import('@layout/DefaultLayout.tsx').then((module) => ({ default: module.default }))
-);
-
 
 export const router = createBrowserRouter([
     {
@@ -32,8 +28,5 @@ export const router = createBrowserRouter([
             },
         ]    
     },
-    {
-        path: "/default",
-        element: <DefaultLayout />
-    }
+
 ]);

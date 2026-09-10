@@ -1,6 +1,6 @@
 import React from "react";
 
-function LocationAndReviewsCard() {
+export function LocationAndReviewsCard(): React.JSX.Element {
     return (
     <div className="bg-[#e4f2f3] rounded-2xl p-6 shadow-md border border-teal-100 grid grid-cols-1 md:grid-cols-2 gap-6">
       {/* Testimonios */}
@@ -41,5 +41,3 @@ function LocationAndReviewsCard() {
     </div>
   );
 }
-
-export {LocationAndReviewsCard};

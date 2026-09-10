@@ -1,6 +1,6 @@
 import React from 'react';
 
-function BookingStepCard() {
+export function BookingStepCard(): React.JSX.Element {
     return (
     <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 flex flex-col justify-between">
       <h3 className="text-center font-extrabold text-lg text-gray-800 uppercase mb-4">
@@ -35,5 +35,3 @@ function BookingStepCard() {
     </div>
   );
 }
-
-export {BookingStepCard};

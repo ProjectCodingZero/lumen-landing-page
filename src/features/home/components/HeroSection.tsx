@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from "@shared/components/Button.tsx";
 
-function HeroSection() {
+export function HeroSection(): React.JSX.Element {
     return (
     <section className="relative bg-white overflow-hidden py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
@@ -33,5 +33,3 @@ function HeroSection() {
     </section>
     );
 }
-
-export { HeroSection };
