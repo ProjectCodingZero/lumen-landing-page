@@ -1,6 +1,6 @@
 import React from 'react';
-import { useTitle } from "@shared/hooks/useTitle.ts";
-import {ServiceCard} from "@/features/services/index.ts";
+import { Button, useTitle } from "@/shared";
+import {ServiceCard} from "@features/services";
 
 export default function ServicesLayout(): React.JSX.Element {
     const setTitle = useTitle();
@@ -105,12 +105,12 @@ export default function ServicesLayout(): React.JSX.Element {
               Agenda tu cita hoy mismo o comunícate con nosotros para recibir asesoramiento personalizado.
             </p>
             <div className="pt-4 flex justify-center gap-4">
-              <button className="bg-white text-indigo-900 font-semibold px-8 py-3 rounded-xl hover:bg-indigo-50 transition-colors">
+              <Button className="bg-white text-indigo-900 font-semibold px-8 py-3 rounded-xl hover:bg-indigo-50 transition-colors hover:bg-indigo-200">
                 Reservar Cita
-              </button>
-              <button className="border border-indigo-400 text-white font-semibold px-8 py-3 rounded-xl hover:bg-indigo-800 transition-colors">
+              </Button>
+              <Button className="border border-indigo-400 text-white font-semibold px-8 py-3 rounded-xl hover:bg-indigo-800 transition-colors">
                 Contactar Soporte
-              </button>
+              </Button>
             </div>
           </div>
         </section>

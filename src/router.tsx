@@ -1,6 +1,6 @@
 import {lazy, Suspense} from 'react';
 import { createBrowserRouter, Navigate } from 'react-router-dom';
-import { LoadingFallback } from '@shared/components/LoadingFallback.tsx';
+import { LoadingFallback } from '@/shared';
 // Import layouts
 import FullLayout from "@/layout/FullLayout.tsx";
 

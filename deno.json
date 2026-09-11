@@ -18,24 +18,24 @@
     "start": "deno task build && deno task preview"
   },
   "imports": {
-  "@deno/vite-plugin": "npm:@deno/vite-plugin@^2.0.3",
-  "@tailwindcss/vite": "npm:@tailwindcss/vite@^4.3.3",
-  "@rolldown/pluginutils": "npm:@rolldown/pluginutils@^1.0.1",
-  "@types/node": "npm:@types/node@^26.5.0",
-  "@types/react": "npm:@types/react@^19.2.18",
-  "@types/react-dom": "npm:@types/react-dom@^19.2.7",
-  "@vitejs/plugin-react": "npm:@vitejs/plugin-react@^6.1.1",
-  "oxlint": "npm:oxlint@^1.82.0",
-  "react": "npm:react@^19.2.8",
-  "react-dom": "npm:react-dom@^19.2.8",
-  "react-router-dom": "npm:react-router-dom@^7.18.3",
-  "tailwindcss": "npm:tailwindcss@^4.3.3",
-  "vite": "npm:vite@^8.2.2",
-  "@/": "./src/",
-  "@shared/": "./src/shared/",
-  "@assets/": "./src/shared/assets/",
-  "@features/": "./src/features/",
-  "@layout/": "./src/layout/"
+    "@deno/vite-plugin": "npm:@deno/vite-plugin@^2.0.3",
+    "@tailwindcss/vite": "npm:@tailwindcss/vite@^4.3.3",
+    "@rolldown/pluginutils": "npm:@rolldown/pluginutils@^1.0.1",
+    "@types/node": "npm:@types/node@^26.5.0",
+    "@types/react": "npm:@types/react@^19.2.18",
+    "@types/react-dom": "npm:@types/react-dom@^19.2.7",
+    "@vitejs/plugin-react": "npm:@vitejs/plugin-react@^6.1.1",
+    "oxlint": "npm:oxlint@^1.82.0",
+    "react": "npm:react@^19.2.8",
+    "react-dom": "npm:react-dom@^19.2.8",
+    "react-router-dom": "npm:react-router-dom@^7.18.3",
+    "tailwindcss": "npm:tailwindcss@^4.3.3",
+    "vite": "npm:vite@^8.2.2",
+    "vite-plugin-svgr": "npm:vite-plugin-svgr@^5.2.0",
+
+    "@/": "./src/",
+    "@features/": "./src/features/",
+    "@layout/": "./src/layout/"
   }
 }
 

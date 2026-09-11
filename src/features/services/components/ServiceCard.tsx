@@ -1,3 +1,4 @@
+import { Button } from '@/shared';
 import React from 'react';
 interface ServiceCardProps {
   title: string;
@@ -24,12 +25,15 @@ export function ServiceCard({ title, description, badge, children, borderColor, 
         <h3 className="text-xl font-bold text-slate-800 mb-3">{title}</h3>
         <p className="text-slate-600 text-sm leading-relaxed mb-6">{description}</p>
       </div>
-      <button className="text-sm font-semibold text-indigo-600 hover:text-indigo-800 flex items-center gap-2 group w-fit">
+      <Button
+      variant='none' 
+      className="text-sm font-semibold text-indigo-600 hover:text-indigo-800 flex items-center gap-2 group w-fit"
+      >
         <span>Saber más</span>
         <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>
-      </button>
+      </Button>
     </div>
   );
 };

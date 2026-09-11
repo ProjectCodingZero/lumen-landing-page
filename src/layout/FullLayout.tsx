@@ -1,11 +1,9 @@
 import {Outlet } from "react-router-dom";
-import { useIsActive } from "@shared/hooks/useIsActive.ts";
-import { Link } from "@shared/components/Link.tsx";
+import { useIsActive, Link, Icon } from "@/shared";
 const linkStyle = (isActive: boolean) => `transition-colors ${isActive ? 'text-[#f1883d]' : 'text-gray-600 hover:text-[#009ba4]'}`;
 function FullLayout() {
 
   const isActive = useIsActive();
-
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col font-sans text-gray-800 antialiased">
       
@@ -16,7 +14,7 @@ function FullLayout() {
           {/* Logo y Nombre */}
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="text-3xl text-[#f1883d] transition-transform group-hover:scale-105">
-              🐶
+              <Icon className="w-20 h-20" />
             </div>
             <div>
               <h1 className="font-extrabold text-lg text-[#009ba4] leading-tight tracking-tight">
