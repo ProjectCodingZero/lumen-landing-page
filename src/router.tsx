@@ -8,6 +8,9 @@ import FullLayout from "@/layout/FullLayout.tsx";
 const HomeView = lazy(() =>
   import('@layout/HomeLayout.tsx').then((module) => ({ default: module.default }))
 );
+const ServicesView = lazy(() =>
+  import('@layout/ServicesLayout.tsx').then((module) => ({ default: module.default }))
+);
 
 export const router = createBrowserRouter([
     {
@@ -26,6 +29,14 @@ export const router = createBrowserRouter([
                     </Suspense>
                 )
             },
+            {
+                path: "/services",
+                element: (
+                    <Suspense fallback={<LoadingFallback />}>
+                        <ServicesView />
+                    </Suspense>
+                )
+            }
         ]    
     },
 

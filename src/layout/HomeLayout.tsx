@@ -2,7 +2,7 @@ import { HeroSection } from '@features/home/components/HeroSection.tsx';
 import { BookingStepCard } from '@features/home/components/BookingStepCard.tsx';
 import { LocationAndReviewsCard } from '@features/home/components/LocationAndReviewsCard.tsx';
 import { useTitle } from '@shared/hooks/useTitle.ts';
-function HomeLayout() {
+export default function HomeLayout() {
   const setTitle = useTitle();
   setTitle('Inicio - Lumen');
   return (
@@ -17,5 +17,3 @@ function HomeLayout() {
     </>
   );
 };
-
-export default HomeLayout;

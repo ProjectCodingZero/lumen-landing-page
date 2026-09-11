@@ -14,7 +14,8 @@
     "dev": "deno run -A npm:vite",
     "build": "deno run -A npm:typescript/tsc -b && deno run -A npm:vite build",
     "lint": "deno run -A npm:oxlint",
-    "preview": "deno run -A npm:vite preview"
+    "preview": "deno run -A npm:vite preview",
+    "start": "deno task build && deno task preview"
   },
   "imports": {
   "@deno/vite-plugin": "npm:@deno/vite-plugin@^2.0.3",

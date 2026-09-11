@@ -9,12 +9,8 @@
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "isolatedModules": true,
-    "moduleDetection": "force",
+    "moduleDetection": "auto",
     "noEmit": true,
-
-    /* Strictness */
-    "strict": true,
-    "verbatimModuleSyntax": true
   },
   "include": ["vite.config.ts"]
 }
