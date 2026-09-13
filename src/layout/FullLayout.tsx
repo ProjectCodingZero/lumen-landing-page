@@ -1,5 +1,5 @@
-import {Outlet } from "react-router-dom";
-import { useIsActive, Link, Icon } from "@/shared";
+import {Outlet } from 'react-router-dom';
+import { useIsActive, Link, Icon } from '@/shared/index.ts';
 const linkStyle = (isActive: boolean) => `transition-colors ${isActive ? 'text-[#f1883d]' : 'text-gray-600 hover:text-[#009ba4]'}`;
 function FullLayout() {
 

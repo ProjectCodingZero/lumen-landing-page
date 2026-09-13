@@ -1,4 +1,4 @@
-import { Button } from '@/shared';
+import { Button } from '@/shared/index.ts';
 import React from 'react';
 interface ServiceCardProps {
   title: string;

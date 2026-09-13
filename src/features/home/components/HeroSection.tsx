@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from "@/shared";
+import { Button } from '@/shared/index.ts';
 
 export function HeroSection(): React.JSX.Element {
     return (

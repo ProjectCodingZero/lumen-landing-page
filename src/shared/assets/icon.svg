@@ -6,25 +6,25 @@
     </linearGradient>
   </defs>
 
-  <!-- Fondo circular limpio y centrado -->
-  <circle cx="250" cy="250" r="220" fill="#f8fafc" stroke="#e2e8f0" stroke-width="4" />
+  <!-- Fondo circular limpio con borde -->
+  <circle cx="250" cy="250" r="220" fill="#FDFFFC" stroke="#12263A" stroke-width="6" />
 
   <!-- Grupo centrado de la huella -->
   <g transform="translate(0, 10)">
-    <!-- Almohadilla central principal (más grande y simétrica) -->
+    <!-- Almohadilla central principal con borde -->
     <path d="M250 240 C210 240 190 270 190 305 C190 340 215 375 250 375 C285 375 310 340 310 305 C310 270 290 240 250 240 Z" 
-          fill="url(#pawGradient)" />
+          fill="url(#pawGradient)" stroke="#0c4a6e" stroke-width="5" />
 
-    <!-- Dedo superior izquierdo -->
-    <ellipse cx="185" cy="180" rx="25" ry="38" transform="rotate(-15 185 180)" fill="url(#pawGradient)" />
+    <!-- Dedo superior izquierdo con borde -->
+    <ellipse cx="185" cy="180" rx="25" ry="38" transform="rotate(-15 185 180)" fill="url(#pawGradient)" stroke="#0c4a6e" stroke-width="5" />
 
-    <!-- Dedo superior derecho -->
-    <ellipse cx="315" cy="180" rx="25" ry="38" transform="rotate(15 315 180)" fill="url(#pawGradient)" />
+    <!-- Dedo superior derecho con borde -->
+    <ellipse cx="315" cy="180" rx="25" ry="38" transform="rotate(15 315 180)" fill="url(#pawGradient)" stroke="#0c4a6e" stroke-width="5" />
 
-    <!-- Dedo exterior izquierdo -->
-    <ellipse cx="130" cy="245" rx="22" ry="34" transform="rotate(-38 130 245)" fill="url(#pawGradient)" />
+    <!-- Dedo exterior izquierdo con borde -->
+    <ellipse cx="130" cy="245" rx="22" ry="34" transform="rotate(-38 130 245)" fill="url(#pawGradient)" stroke="#0c4a6e" stroke-width="5" />
 
-    <!-- Dedo exterior derecho -->
-    <ellipse cx="370" cy="245" rx="22" ry="34" transform="rotate(38 370 245)" fill="url(#pawGradient)" />
+    <!-- Dedo exterior derecho con borde -->
+    <ellipse cx="370" cy="245" rx="22" ry="34" transform="rotate(38 370 245)" fill="url(#pawGradient)" stroke="#0c4a6e" stroke-width="5" />
   </g>
 </svg>

@@ -1,10 +1,10 @@
 import React from 'react';
-import { Button, useTitle } from "@/shared";
-import {ServiceCard} from "@features/services";
+import { Button, useTitle } from '@/shared/index.ts';
+import { ServiceCard } from '@features/services/index.ts';
 
 export default function ServicesLayout(): React.JSX.Element {
     const setTitle = useTitle();
-    setTitle('Servicios - Lumen');
+    setTitle('Lumen - Servicios');
     return (
     <main className="min-h-screen bg-slate-50 py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto space-y-20">
