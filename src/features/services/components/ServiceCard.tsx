@@ -4,9 +4,9 @@ interface ServiceCardProps {
   title: string;
   description: string;
   badge?: string;
-    children: React.ReactNode;
-    borderColor?: string;
-    badgeColor?: string;
+  children?: React.ReactNode;
+  borderColor?: string;
+  badgeColor?: string;
 }
 export function ServiceCard({ title, description, badge, children, borderColor, badgeColor }: ServiceCardProps): React.JSX.Element {
   return (
@@ -27,7 +27,7 @@ export function ServiceCard({ title, description, badge, children, borderColor, 
       </div>
       <Button
       variant='none' 
-      className="text-sm font-semibold text-indigo-600 hover:text-indigo-800 flex items-center gap-2 group w-fit"
+      className="text-sm font-semibold text-indigo-600 hover:text-indigo-300 rounded-lg hover:bg-indigo-800 flex items-center gap-2 group w-fit"
       >
         <span>Saber más</span>
         <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">

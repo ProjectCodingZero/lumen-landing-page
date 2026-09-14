@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, useTitle } from '@/shared/index.ts';
+import { Button, useTitle, ServicioConsultasIcon, BisturiIcon, JeringaIcon, TijerasIcon } from '@/shared/index.ts';
 import { ServiceCard } from '@features/services/index.ts';
 
 export default function ServicesLayout(): React.JSX.Element {
@@ -33,10 +33,7 @@ export default function ServicesLayout(): React.JSX.Element {
             borderColor="border-emerald-100"
             badgeColor="bg-emerald-100 text-emerald-800"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
-              <circle cx="20" cy="20" r="20" fill="#dcfce7"/>
-              <path d="M14 12 C14 8, 26 8, 26 12 L26 18 C26 21, 23 24, 20 24 C17 24, 14 21, 14 18 Z" fill="none" stroke="#16a34a" strokeWidth="2" strokeLinecap="round"/>
-            </svg>
+            <ServicioConsultasIcon />
           </ServiceCard>
 
           {/* Card 2: Cirugía y Laboratorio (Bisturí Corregido) */}
@@ -47,17 +44,7 @@ export default function ServicesLayout(): React.JSX.Element {
             borderColor="border-slate-200"
             badgeColor="bg-slate-100 text-slate-800"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
-              <circle cx="20" cy="20" r="20" fill="#e2e8f0"/>
-              <g transform="translate(20, 20) rotate(-45) translate(-20, -20)">
-                <rect x="18" y="14" width="16" height="4" rx="1.5" fill="#64748b"/>
-                <line x1="21" y1="14" x2="21" y2="18" stroke="#cbd5e1" strokeWidth="1"/>
-                <line x1="25" y1="14" x2="25" y2="18" stroke="#cbd5e1" strokeWidth="1"/>
-                <line x1="29" y1="14" x2="29" y2="18" stroke="#cbd5e1" strokeWidth="1"/>
-                <path d="M 6 16 L 18 14 L 18 18 Z" fill="#94a3b8" stroke="#475569" strokeWidth="0.5"/>
-                <path d="M 6 16 L 12 15 Z" stroke="#ffffff" strokeWidth="0.8" strokeLinecap="round"/>
-              </g>
-            </svg>
+            <BisturiIcon />
           </ServiceCard>
 
           {/* Card 3: Vacunación y Prevención (Jeringa) */}
@@ -68,10 +55,7 @@ export default function ServicesLayout(): React.JSX.Element {
             borderColor="border-sky-100"
             badgeColor="bg-sky-100 text-sky-800"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
-              <circle cx="20" cy="20" r="20" fill="#bae6fd"/>
-              <path d="M15 25 L25 15 M22 12 L28 18" stroke="#0284c7" strokeWidth="2" strokeLinecap="round"/>
-            </svg>
+            <JeringaIcon />
           </ServiceCard>
 
           {/* Card 4: Estética y Cuidado (Tijeras Corregidas) */}
@@ -82,16 +66,7 @@ export default function ServicesLayout(): React.JSX.Element {
             borderColor="border-purple-100"
             badgeColor="bg-purple-100 text-purple-800"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
-              <circle cx="20" cy="20" r="20" fill="#fae8ff"/>
-              <g transform="translate(10, 8)" stroke="#c084fc" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none">
-                <circle cx="6" cy="6" r="3"/>
-                <circle cx="6" cy="18" r="3"/>
-                <line x1="8.5" y1="8" x2="20" y2="20"/>
-                <line x1="8.5" y1="16" x2="20" y2="4"/>
-                <circle cx="14" cy="12" r="1" fill="#c084fc"/>
-              </g>
-            </svg>
+            <TijerasIcon />
           </ServiceCard>
 
         </section>

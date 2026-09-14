@@ -1,7 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
 import { Link as ReactRouterLink, type LinkProps as RouterLinkProps } from 'react-router-dom';
 
-type LinkVariant = 'default' | 'button' | 'muted' | 'navbar_active' | 'navbar_inactive';
+type LinkVariant = 'default' | 'button' | 'muted' | 'none';
 
 // Heredamos las props originales de react-router-dom
 interface AppLinkProps extends RouterLinkProps {
@@ -10,17 +10,16 @@ interface AppLinkProps extends RouterLinkProps {
 }
 
 const STYLES: Record<LinkVariant, string> = {
-  default: "text-[#009ba4] font-medium hover:underline transition-colors",
-  button: "inline-flex items-center justify-center bg-[#009ba4] text-white font-bold py-2 px-4 rounded hover:bg-[#007b7f] transition-colors",
+  none: "",
+  default: "text-teal-500 font-medium hover:underline transition-colors",
+  button: "inline-flex items-center justify-center bg-teal-500 text-white font-bold py-2 px-4 rounded hover:bg-teal-600 transition-colors",
   muted: "text-gray-500 hover:text-gray-900 transition-colors",
-  navbar_active: "text-[#f1883d] transition-colors",
-  navbar_inactive: "text-gray-600 hover:text-[#009ba4] transition-colors"
 };
 
 export function Link({
   to,
   children,
-  variant = 'default',
+  variant = 'none',
   isExternal = false,
   className = '',
   ...props

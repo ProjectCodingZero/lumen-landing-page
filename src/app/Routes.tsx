@@ -12,7 +12,7 @@ const ServicesView = lazy(() =>
   import('@layout/ServicesLayout.tsx').then((module) => ({ default: module.default }))
 );
 
-export const router = createBrowserRouter([
+export const Routes = createBrowserRouter([
     {
         path : "/",
         element: <FullLayout />,
@@ -39,5 +39,4 @@ export const router = createBrowserRouter([
             }
         ]    
     },
-
 ]);
