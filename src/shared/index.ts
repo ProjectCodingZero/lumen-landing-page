@@ -1,14 +1,13 @@
-
 //Components
-export { Button } from './components/Button.tsx'; 
-export { LoadingFallback } from './components/LoadingFallback.tsx';
-export { Link } from './components/Link.tsx'; 
-export { Footer } from './components/Footer.tsx';
-export { Header } from './components/Header.tsx';
+export { Button } from "./components/Button.tsx";
+export { LoadingFallback } from "./components/LoadingFallback.tsx";
+export { Link } from "./components/Link.tsx";
+export { Footer } from "./components/Footer.tsx";
+export { Header } from "./components/Header.tsx";
 //Hooks
-export { useIsActive } from './hooks/useIsActive.ts';
-export { useTitle } from './hooks/useTitle.ts';
-export { useHover } from './hooks/useHover.ts';
+export { useIsActive } from "./hooks/useIsActive.ts";
+export { useTitle } from "./hooks/useTitle.ts";
+export { useHover } from "./hooks/useHover.ts";
 //Assets
 export { default as BisturiIcon } from "./assets/bisturi.svg?react";
 export { default as TijerasIcon } from "./assets/tijeras.svg?react";

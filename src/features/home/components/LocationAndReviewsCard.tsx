@@ -1,7 +1,7 @@
 import React from "react";
 
 export function LocationAndReviewsCard(): React.JSX.Element {
-    return (
+  return (
     <div className="bg-[#e4f2f3] rounded-2xl p-6 shadow-md border border-teal-100 grid grid-cols-1 md:grid-cols-2 gap-6">
       {/* Testimonios */}
       <div>
@@ -10,14 +10,26 @@ export function LocationAndReviewsCard(): React.JSX.Element {
         </h3>
         <div className="space-y-3">
           <div className="bg-white p-3 rounded-xl shadow-sm text-center">
-            <img src="https://i.pravatar.cc/100?img=32" alt="Marta" className="w-10 h-10 rounded-full mx-auto mb-1" />
+            <img
+              src="https://i.pravatar.cc/100?img=32"
+              alt="Marta"
+              className="w-10 h-10 rounded-full mx-auto mb-1"
+            />
             <p className="font-bold text-xs text-gray-800">Marta C.</p>
-            <p className="text-[10px] text-gray-500 italic">"Excelente atención y comodidad."</p>
+            <p className="text-[10px] text-gray-500 italic">
+              "Excelente atención y comodidad."
+            </p>
           </div>
           <div className="bg-white p-3 rounded-xl shadow-sm text-center">
-            <img src="https://i.pravatar.cc/100?img=12" alt="Pedro" className="w-10 h-10 rounded-full mx-auto mb-1" />
+            <img
+              src="https://i.pravatar.cc/100?img=12"
+              alt="Pedro"
+              className="w-10 h-10 rounded-full mx-auto mb-1"
+            />
             <p className="font-bold text-xs text-gray-800">Pedro R.</p>
-            <p className="text-[10px] text-gray-500 italic">"Mi veterinaria de confianza."</p>
+            <p className="text-[10px] text-gray-500 italic">
+              "Mi veterinaria de confianza."
+            </p>
           </div>
         </div>
       </div>

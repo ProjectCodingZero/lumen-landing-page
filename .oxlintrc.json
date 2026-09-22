@@ -8,7 +8,7 @@
   "overrides": [
     {
       "files": ["src/router.tsx"],
-      "rules":{
+      "rules": {
         "react/only-export-components": "off"
       }
     }

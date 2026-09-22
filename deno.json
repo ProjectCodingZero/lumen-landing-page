@@ -36,6 +36,9 @@
     "@/": "./src/",
     "@features/": "./src/features/",
     "@layout/": "./src/layout/"
+  },
+  "fmt": {
+    "useTabs": false,
+    "indentWidth": 2
   }
 }
-

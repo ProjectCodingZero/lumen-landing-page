@@ -23,7 +23,7 @@
 
     /* Alias de rutas */
     "paths": {
-      "*": ["./"],
+      "*": ["./*"],
       "@/*": ["./src/*"],
       "@features/*": ["./src/features/*"],
       "@layout/*": ["./src/layout/*"]

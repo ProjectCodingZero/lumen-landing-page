@@ -1,8 +1,13 @@
-import { LocationAndReviewsCard, BookingStepCard, HeroSection } from '@features/home/index.ts';
-import { useTitle } from '@/shared/index.ts';
+import {
+  BookingStepCard,
+  HeroSection,
+  LocationAndReviewsCard,
+} from "@features/home/index.ts";
+import { useTitle } from "@/shared/index.ts";
+
 export default function HomeLayout() {
   const setTitle = useTitle();
-  setTitle('Lumen - Inicio');
+  setTitle("Lumen - Inicio");
   return (
     <main>
       <HeroSection />
@@ -14,4 +19,4 @@ export default function HomeLayout() {
       </section>
     </main>
   );
-};
+}

@@ -1,11 +1,9 @@
-import {Outlet } from 'react-router-dom';
-import { Footer, Header } from '@/shared/index.ts';
+import { Outlet } from "react-router-dom";
+import { Footer, Header } from "@/shared/index.ts";
 
-function FullLayout() {
-
+export default function FullLayout() {
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col font-sans text-gray-800 antialiased">
-      
       <Header />
 
       {/* CONTENIDO DINÁMICO (Vistas de la aplicación) */}
@@ -14,9 +12,6 @@ function FullLayout() {
       </main>
 
       <Footer />
-
     </div>
   );
-};
-
-export default FullLayout;
+}
