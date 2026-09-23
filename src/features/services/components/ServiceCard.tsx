@@ -7,18 +7,34 @@ interface ServiceCardProps {
   children?: React.ReactNode;
   borderColor?: string;
   badgeColor?: string;
+  backgroundColor?: string;
+  iconBackgroundColor?: string;
 }
+
 export function ServiceCard(
-  { title, description, badge, children, borderColor, badgeColor }:
-    ServiceCardProps,
+  {
+    title,
+    description,
+    badge,
+    children,
+    borderColor = "",
+    badgeColor = "",
+    iconBackgroundColor = "",
+  }: ServiceCardProps,
 ): React.JSX.Element {
   return (
     <div
-      className={`bg-white rounded-2xl p-8 shadow-sm border ${borderColor} hover:shadow-md transition-shadow duration-300 flex flex-col justify-between relative`}
+      className={`rounded-2xl p-8 shadow-xs shadow-indigo-300 ${borderColor} hover:shadow-md transition-shadow duration-300 flex flex-col justify-between relative group`}
     >
       <div>
         <div className="flex justify-between items-start mb-6">
-          <div className="p-3 rounded-xl bg-slate-50">
+          <div
+            className={`p-3 rounded-xl ${
+              iconBackgroundColor === "" || iconBackgroundColor === undefined
+                ? "bg-green-300/90 group-hover:bg-green-400"
+                : iconBackgroundColor
+            }  w-fit h-fit `}
+          >
             {children}
           </div>
           {badge && (
@@ -30,13 +46,13 @@ export function ServiceCard(
           )}
         </div>
         <h3 className="text-xl font-bold text-slate-800 mb-3">{title}</h3>
-        <p className="text-slate-600 text-sm leading-relaxed mb-6">
+        <p className="text-slate-800 hover:text-black text-sm leading-relaxed mb-6">
           {description}
         </p>
       </div>
       <Button
         variant="none"
-        className="text-sm font-semibold text-indigo-600 hover:text-indigo-300 rounded-lg hover:bg-indigo-800 flex items-center gap-2 group w-fit"
+        className="bg-indigo-100 text-sm font-semibold text-indigo-800 hover:text-indigo-300 rounded-lg hover:bg-indigo-800 flex items-center gap-2 group w-fit"
       >
         <span>Saber más</span>
         <svg

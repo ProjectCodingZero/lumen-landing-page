@@ -8,7 +8,8 @@ import {
   useTitle,
 } from "@/shared/index.ts";
 import { ServiceCard } from "@features/services/index.ts";
-
+const borderColor =
+  "hover:scale-105 transition-transform duration-300 bg-teal-200/80 hover:bg-teal-200";
 export default function ServicesLayout(): React.JSX.Element {
   const setTitle = useTitle();
   setTitle("Lumen - Servicios");
@@ -36,7 +37,7 @@ export default function ServicesLayout(): React.JSX.Element {
             title="Consultas Médicas"
             description="Evaluaciones clínicas exhaustivas con profesionales altamente capacitados para un diagnóstico preciso y oportuno."
             badge="Popular"
-            borderColor="border-emerald-100"
+            borderColor={borderColor}
             badgeColor="bg-emerald-100 text-emerald-800"
           >
             <ServicioConsultasIcon />
@@ -47,7 +48,7 @@ export default function ServicesLayout(): React.JSX.Element {
             title="Cirugía y Laboratorio"
             description="Procedimientos quirúrgicos seguros y análisis clínicos de alta precisión con tecnología de punta."
             badge="Avanzado"
-            borderColor="border-slate-200"
+            borderColor={borderColor}
             badgeColor="bg-slate-100 text-slate-800"
           >
             <BisturiIcon />
@@ -58,7 +59,7 @@ export default function ServicesLayout(): React.JSX.Element {
             title="Vacunación y Prevención"
             description="Planes de inmunización completos y medidas profilácticas para la protección continua de la salud."
             badge="Esencial"
-            borderColor="border-sky-100"
+            borderColor={borderColor}
             badgeColor="bg-sky-100 text-sky-800"
           >
             <JeringaIcon />
@@ -69,7 +70,7 @@ export default function ServicesLayout(): React.JSX.Element {
             title="Estética Especializada"
             description="Cuidado de imagen y tratamientos estéticos minuciosos adaptados a cada requerimiento específico."
             badge="Nuevo"
-            borderColor="border-purple-100"
+            borderColor={borderColor}
             badgeColor="bg-purple-100 text-purple-800"
           >
             <TijerasIcon />
