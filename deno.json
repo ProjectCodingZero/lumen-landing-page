@@ -21,10 +21,13 @@
     "@deno/vite-plugin": "npm:@deno/vite-plugin@^2.0.3",
     "@tailwindcss/vite": "npm:@tailwindcss/vite@^4.3.3",
     "@rolldown/pluginutils": "npm:@rolldown/pluginutils@^1.0.1",
+    "@types/deno": "npm:@types/deno@^2.7.0",
     "@types/node": "npm:@types/node@^26.5.0",
     "@types/react": "npm:@types/react@^19.2.18",
     "@types/react-dom": "npm:@types/react-dom@^19.2.7",
     "@vitejs/plugin-react": "npm:@vitejs/plugin-react@^6.1.1",
+    "axios": "npm:axios@^1.20.0",
+    "deno": "npm:deno@^2.9.6",
     "oxlint": "npm:oxlint@^1.82.0",
     "react": "npm:react@^19.2.8",
     "react-dom": "npm:react-dom@^19.2.8",
@@ -35,6 +38,7 @@
 
     "@/": "./src/",
     "@features/": "./src/features/",
+    "@shared/": "./src/shared/",
     "@layout/": "./src/layout/"
   },
   "fmt": {

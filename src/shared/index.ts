@@ -1,14 +1,20 @@
+// Api
+export { instance } from "./api/axiosInstance.ts";
+// Config
+// export { env } from "./config/envConfig.ts";
+// Context
+export { AuthProvider } from "./context/AuthContext.tsx";
 //Components
 export { Button } from "./components/Button.tsx";
 export { LoadingFallback } from "./components/LoadingFallback.tsx";
 export { Link } from "./components/Link.tsx";
 export { Footer } from "./components/Footer.tsx";
 export { Header } from "./components/Header.tsx";
-//Hooks
+// Hooks
 export { useIsActive } from "./hooks/useIsActive.ts";
 export { useTitle } from "./hooks/useTitle.ts";
 export { useHover } from "./hooks/useHover.ts";
-//Assets
+// Assets
 export { default as BisturiIcon } from "./assets/bisturi.svg?react";
 export { default as TijerasIcon } from "./assets/tijeras.svg?react";
 export { default as JeringaIcon } from "./assets/jeringa.svg?react";

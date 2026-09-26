@@ -2,22 +2,21 @@ import { lazy, Suspense } from "react";
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import { LoadingFallback } from "@/shared/index.ts";
 // Import layouts
-import FullLayout from "@/layout/FullLayout.tsx";
-import ErrorLayout from "@/layout/ErrorLayout.tsx";
+import { FullLayout, ErrorLayout, AuthLayout } from "@/layout/index.ts";
 //Lazy load component for code splitting
 const HomeView = lazy(() =>
-  import("@layout/HomeLayout.tsx").then((module) => ({
-    default: module.default,
+  import("@/view/index.ts").then((module) => ({
+    default: module.HomeView,
   }))
 );
 const ServicesView = lazy(() =>
-  import("@layout/ServicesLayout.tsx").then((module) => ({
-    default: module.default,
+  import("@/view/index.ts").then((module) => ({
+    default: module.ServicesView,
   }))
 );
 const AboutView = lazy(() =>
-  import("@layout/AboutLayout.tsx").then((module) => ({
-    default: module.default,
+  import("@/view/index.ts").then((module) => ({
+    default: module.AboutView,
   }))
 );
 
@@ -33,7 +32,14 @@ export const Routes = createBrowserRouter([
       },
       {
         path: "/home",
-        index: true,
+        element: (
+        <Suspense fallback={<LoadingFallback />}>
+          <HomeView />
+        </Suspense>
+        ),
+      },
+      {
+        path: "/about",
         element: (
           <Suspense fallback={<LoadingFallback />}>
             <HomeView />
@@ -42,7 +48,6 @@ export const Routes = createBrowserRouter([
       },
       {
         path: "/services",
-        index: true,
         element: (
           <Suspense fallback={<LoadingFallback />}>
             <ServicesView />
@@ -51,7 +56,6 @@ export const Routes = createBrowserRouter([
       },
       {
         path: "/about",
-        index: true,
         element: (
           <Suspense fallback={<LoadingFallback />}>
             <AboutView />
@@ -60,4 +64,14 @@ export const Routes = createBrowserRouter([
       },
     ],
   },
+  {
+      path: "/auth",
+      element: <AuthLayout/>,
+      errorElement: <ErrorLayout />,
+      children: [
+        {
+          index: true,
+        }
+      ]
+  }
 ]);
