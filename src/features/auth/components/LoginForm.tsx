@@ -1,4 +1,4 @@
-import { useState } from "@types/react";
+import { useState } from "react";
 import {
   EyeIcon,
   EyeOffIcon,
@@ -12,7 +12,9 @@ interface LoginFormProps {
   isLoading: boolean;
   onForgotPassword: () => void;
 }
-export function LoginForm({ onSubmit, isLoading, onForgotPassword }: LoginFormProps) {
+export function LoginForm(
+  { onSubmit, isLoading, onForgotPassword }: LoginFormProps,
+) {
   const [formData, setFormData] = useState<SignInRequest>({
     email: "",
     password: "",
@@ -116,4 +118,4 @@ export function LoginForm({ onSubmit, isLoading, onForgotPassword }: LoginFormPr
       </button>
     </form>
   );
-};
+}

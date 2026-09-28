@@ -1,6 +1,8 @@
 import axios from "axios";
+import { getConfig } from "@shared/index.ts";
+const config = getConfig();
 const instance = axios.create({
-  baseURL: "https://127.0.0.0:7196",
+  baseURL: config.apiUrl,
   withCredentials: true,
 });
 

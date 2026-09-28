@@ -1,7 +1,8 @@
 // Api
 export { instance } from "./api/axiosInstance.ts";
 // Config
-// export { env } from "./config/envConfig.ts";
+export { getConfig, loadConfig } from "./config/config.ts";
+
 // Context
 export { AuthProvider } from "./context/AuthContext.tsx";
 //Components

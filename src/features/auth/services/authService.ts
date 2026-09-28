@@ -1,9 +1,16 @@
 import { instance } from "@shared/index.ts";
-import { type SignInRequest, type SignUpRequest } from "@features/auth/index.ts";
+import {
+  type SignInRequest,
+  type SignInResponse,
+  type SignUpRequest,
+} from "@features/auth/index.ts";
 export const authService = {
-  signIn: async (data: SignInRequest): Promise<SignInRequest> => {
+  signIn: async (data: SignInRequest): Promise<SignInResponse> => {
     try {
-      const response = await instance.post<SignInRequest>("/auth/signin", data);
+      const response = await instance.post<SignInResponse>(
+        "/auth/signin",
+        data,
+      );
       return response.data;
     } catch (error) {
       console.error("Error logging in:", error);
@@ -29,13 +36,14 @@ export const authService = {
       );
       return response.data;
     } catch (error) {
+      console.error("Error registering user:", error);
       handleConnectionError(error, "registro");
 
       throw error;
     }
   },
 };
-const handleConnectionError = (error, context: string) => {
+const handleConnectionError = (error: any, context: string) => {
   console.error(`--- DEBUG ERROR EN ${context.toUpperCase()} ---`);
 
   if (error.response) {

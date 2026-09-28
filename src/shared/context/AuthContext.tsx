@@ -1,5 +1,9 @@
 import { createContext, useMemo, useState } from "react";
-import { authService, type SignInRequest } from "@features/auth/index.ts";
+import {
+  authService,
+  type SignInRequest,
+  type SignInResponse,
+} from "@features/auth/index.ts";
 interface AuthContextType {
   isLoading: boolean;
   isAuthenticated: boolean;
@@ -17,7 +21,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const signin = async (credentials: SignInRequest): Promise<void> => {
     setIsLoading(true);
     try {
-      const data = await authService.signIn(credentials);
+      const data: SignInResponse = await authService.signIn(credentials);
 
       if (data?.token) {
         localStorage.setItem("token", data.token);
