@@ -1,5 +1,7 @@
 @import "tailwindcss";
-
+body {
+  @apply bg-gradient-to-r from-teal-500 to-blue-500;
+}
 @theme {
   --color-brand-50: #fdf3eb;
   --color-brand-100: #fce7d8;

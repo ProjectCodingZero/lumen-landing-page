@@ -20,7 +20,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "verbatimModuleSyntax": true,
-
+    "baseUrl": "./",
     /* Alias de rutas */
     "paths": {
       "*": ["./*"],
@@ -29,6 +29,5 @@
       "@layout/*": ["./src/layout/*"],
       "@shared/*": ["./src/shared/*"]
     }
-  },
-  "include": ["src"]
+  }
 }
