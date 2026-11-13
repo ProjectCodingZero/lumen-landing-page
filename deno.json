@@ -14,12 +14,12 @@
     "dev": "deno run -A npm:astro dev",
     "build": "deno run -A npm:astro build",
     "lint": "deno run -A npm:oxlint",
-    "preview": "deno run -A npm:astro preview",
+    "preview": "deno run --allow-net --allow-read jsr:@std/http/file-server dist/client --port 4322",
     "start": "deno task build && deno task preview",
     "astro": "deno run -A npm:astro"
   },
   "imports": {
-    "@astrojs/react": "npm:@astrojs/react@^7.0.0",
+    "@astrojs/sitemap": "npm:@astrojs/sitemap@^3.7.4",
     "@deno/astro-adapter": "npm:@deno/astro-adapter@^0.6.0",
     "@tailwindcss/vite": "npm:@tailwindcss/vite@^4.3.3",
     "@types/react": "npm:@types/react@^19.2.18",

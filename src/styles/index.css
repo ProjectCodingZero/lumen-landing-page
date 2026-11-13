@@ -1,8 +1,12 @@
 @import "tailwindcss";
-body {
-  @apply bg-gradient-to-r from-teal-500 to-blue-500;
-}
+
 @theme {
+  /* Tipografía */
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", sans-serif;
+  --font-display: "Fraunces", ui-serif, Georgia, "Times New Roman", serif;
+
+  /* Marca */
   --color-brand-50: #fdf3eb;
   --color-brand-100: #fce7d8;
   --color-brand-200: #f9cfb1;
@@ -14,8 +18,7 @@ body {
   --color-brand-800: #844a21;
   --color-brand-900: #603618;
   --color-brand-950: #3c220f;
-}
-@theme {
+
   --color-teal-50: #e5f5f5;
   --color-teal-100: #ccebec;
   --color-teal-200: #99d7da;
@@ -27,4 +30,67 @@ body {
   --color-teal-800: #00555a;
   --color-teal-900: #003e41;
   --color-teal-950: #002629;
+
+  /* Tinta (verde profundo de marca) */
+  --color-ink-50: #f3f7f6;
+  --color-ink-100: #e2ecea;
+  --color-ink-200: #c5d9d5;
+  --color-ink-300: #9bbdb7;
+  --color-ink-400: #6a9a93;
+  --color-ink-500: #477d76;
+  --color-ink-600: #35645f;
+  --color-ink-700: #2b504d;
+  --color-ink-800: #1f3f3d;
+  --color-ink-900: #0b2b2e;
+  --color-ink-950: #061b1d;
+
+  /* Superficies */
+  --color-cream: #fbfaf7;
+
+  /* Animaciones */
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-float-slow: float 10s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-cream text-ink-900 antialiased;
+  }
+
+  ::selection {
+    @apply bg-teal-200 text-ink-950;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-teal-500;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

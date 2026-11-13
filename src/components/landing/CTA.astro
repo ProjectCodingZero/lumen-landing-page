@@ -1,0 +1,90 @@
+---
+import Icon from "../ui/Icon.astro";
+---
+
+<section
+  aria-labelledby="cta-title"
+  class="px-4 pt-16 pb-20 sm:px-6 md:pt-24 md:pb-28"
+>
+  <div
+    class="relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-gradient-to-br from-teal-600 via-teal-700 to-ink-900 px-6 py-14 text-center text-white shadow-[0_40px_100px_-45px_rgba(0,62,65,0.9)] sm:rounded-[2.5rem] sm:px-12 sm:py-16"
+  >
+    <!-- Decoración -->
+    <div
+      aria-hidden="true"
+      class="pointer-events-none absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] opacity-[0.08] [background-size:24px_24px]"
+    >
+    </div>
+    <Icon
+      name="paw"
+      class="pointer-events-none absolute -top-10 -left-10 h-48 w-48 rotate-[-18deg] text-white/5"
+    />
+    <Icon
+      name="paw"
+      class="pointer-events-none absolute -right-8 -bottom-12 h-56 w-56 rotate-12 text-white/5"
+    />
+
+    <div class="relative mx-auto max-w-2xl">
+      <span
+        class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-[10px] font-bold tracking-[0.2em] uppercase backdrop-blur"
+      >
+        Empezá hoy
+      </span>
+      <h2
+        id="cta-title"
+        class="mt-5 font-display text-3xl leading-tight tracking-tight sm:text-4xl md:text-5xl"
+      >
+        Tu clínica merece una experiencia
+        <span class="text-teal-200 italic"> a la altura.</span>
+      </h2>
+      <p
+        class="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-white/70 sm:text-base"
+      >
+        Sumate a las familias y equipos que ya viven una forma más simple,
+        cercana y ordenada de cuidar.
+      </p>
+
+      <div
+        class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row"
+      >
+        <a
+          href="/services/#turnos"
+          class="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-bold text-ink-900 shadow-lg transition-all hover:-translate-y-0.5 hover:bg-teal-50 sm:w-auto"
+        >
+          Reservar un turno
+          <Icon
+            name="arrow-right"
+            class="h-4 w-4 transition-transform group-hover:translate-x-1"
+          />
+        </a>
+        <a
+          href="mailto:sanfelipe@gmail.com?subject=Quiero%20conocer%20Lumen"
+          class="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/25 px-6 py-3.5 text-sm font-bold text-white transition-colors hover:bg-white/10 sm:w-auto"
+        >
+          Hablar con el equipo
+        </a>
+      </div>
+
+      <ul
+        class="mx-auto mt-9 flex flex-col items-center justify-center gap-3 text-xs font-medium text-white/65 sm:flex-row sm:gap-6"
+      >
+        <li class="flex items-center gap-2">
+          <Icon name="map-pin" class="h-4 w-4 text-teal-200" />
+          San Miguel de Tucumán
+        </li>
+        <li class="flex items-center gap-2">
+          <Icon name="phone" class="h-4 w-4 text-teal-200" />
+          <a href="tel:+5493812335259" class="hover:text-white">
+            +54 9 381 233 5259
+          </a>
+        </li>
+        <li class="flex items-center gap-2">
+          <Icon name="mail" class="h-4 w-4 text-teal-200" />
+          <a href="mailto:sanfelipe@gmail.com" class="hover:text-white">
+            sanfelipe@gmail.com
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

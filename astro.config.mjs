@@ -1,14 +1,15 @@
 import { defineConfig } from "astro/config";
-import react from '@astrojs/react';
-import deno from '@deno/astro-adapter';
+import sitemap from "@astrojs/sitemap";
+import deno from "@deno/astro-adapter";
 import tailwindcss from "@tailwindcss/vite";
 import svgr from "vite-plugin-svgr";
 
-
 // https://astro.build/config
 export default defineConfig({
-  vite:{
-    plugins: [tailwindcss()]
-  },
+  site: "https://lumen-soft.app",
+  integrations: [sitemap()],
   adapter: deno(),
+  vite: {
+    plugins: [tailwindcss(), svgr()],
+  },
 });

@@ -1,0 +1,367 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Icon from "../components/ui/Icon.astro";
+import CTA from "../components/landing/CTA.astro";
+
+const title = "Sobre nosotros | Lumen Veterinaria en Tucumán";
+const description =
+  "Conocé la misión, visión y valores de Lumen: una clínica veterinaria en San Miguel de Tucumán que combina excelencia médica, tecnología y un trato profundamente humano.";
+
+const values = [
+  {
+    icon: "heart-pulse",
+    title: "Cuidado compasivo",
+    description:
+      "Cada mascota es parte de una familia. Escuchamos, acompañamos y tratamos con la misma empatía que nos gustaría recibir.",
+  },
+  {
+    icon: "stethoscope",
+    title: "Excelencia médica",
+    description:
+      "Protocolos actualizados y profesionales en formación continua para ofrecer diagnósticos precisos y tratamientos seguros.",
+  },
+  {
+    icon: "sparkles",
+    title: "Innovación con propósito",
+    description:
+      "Incorporamos tecnología que simplifica la gestión y mejora la experiencia, sin perder nunca el trato humano.",
+  },
+  {
+    icon: "users",
+    title: "Compromiso comunitario",
+    description:
+      "Promovemos la tenencia responsable y acompañamos a las familias de Tucumán con prevención y educación.",
+  },
+] as const;
+
+const aboutSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  name: title,
+  description,
+  url: "https://lumen-soft.app/about/",
+  about: { "@id": "https://lumen-soft.app/#organizacion" },
+  inLanguage: "es-AR",
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Inicio",
+      item: "https://lumen-soft.app/",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Nosotros",
+      item: "https://lumen-soft.app/about/",
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  image="/images/about-team.jpg"
+  jsonLd={[aboutSchema, breadcrumbSchema]}
+>
+  <section class="relative isolate overflow-hidden">
+    <div
+      aria-hidden="true"
+      class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60%_60%_at_15%_0%,#fce7d8_0%,transparent_60%)]"
+    >
+    </div>
+
+    <div
+      class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 pt-14 pb-16 lg:grid-cols-2 lg:gap-16 lg:pt-20 lg:pb-24"
+    >
+      <div class="max-w-xl">
+        <nav aria-label="Miga de pan" class="mb-6">
+          <ol class="flex items-center gap-2 text-xs font-semibold text-ink-400">
+            <li><a href="/" class="transition-colors hover:text-ink-900">Inicio</a></li>
+            <li aria-hidden="true">/</li>
+            <li aria-current="page" class="text-ink-700">Nosotros</li>
+          </ol>
+        </nav>
+
+        <span
+          class="text-[11px] font-bold tracking-[0.22em] text-teal-600 uppercase"
+        >
+          Nuestra historia
+        </span>
+        <h1
+          class="mt-3 font-display text-4xl leading-[1.02] tracking-tight text-ink-900 sm:text-5xl lg:text-6xl"
+        >
+          Más que una clínica,
+          <span class="text-teal-600 italic"> una forma de cuidar.</span>
+        </h1>
+        <p class="mt-5 text-base leading-relaxed text-ink-500">
+          Lumen nace en San Miguel de Tucumán con una convicción simple: la
+          excelencia médica y el trato humano no deberían separarse nunca.
+          Desde entonces acompañamos a las familias de la región en cada etapa
+          de la vida de sus mascotas.
+        </p>
+
+        <dl class="mt-8 grid grid-cols-3 gap-4">
+          <div>
+            <dd class="font-display text-3xl text-ink-900">15</dd>
+            <dt class="mt-1 text-[11px] leading-snug font-medium text-ink-500">
+              años de experiencia
+            </dt>
+          </div>
+          <div>
+            <dd class="font-display text-3xl text-ink-900">+1.200</dd>
+            <dt class="mt-1 text-[11px] leading-snug font-medium text-ink-500">
+              familias acompañadas
+            </dt>
+          </div>
+          <div>
+            <dd class="font-display text-3xl text-ink-900">98%</dd>
+            <dt class="mt-1 text-[11px] leading-snug font-medium text-ink-500">
+              de satisfacción
+            </dt>
+          </div>
+        </dl>
+      </div>
+
+      <div class="relative mx-auto w-full max-w-lg lg:max-w-none">
+        <div
+          aria-hidden="true"
+          class="absolute -inset-4 -z-10 rounded-[3rem] bg-gradient-to-tr from-teal-200/70 via-brand-100/60 to-white blur-2xl"
+        >
+        </div>
+        <div
+          class="relative overflow-hidden rounded-[2.5rem] border border-white bg-white p-2.5 shadow-[0_35px_90px_-35px_rgba(11,43,46,0.45)]"
+        >
+          <img
+            src="/images/about-team.jpg"
+            alt="Familia compartiendo un momento con su perro, acompañada por el equipo de Lumen"
+            width="900"
+            height="900"
+            loading="eager"
+            decoding="async"
+            class="h-[320px] w-full rounded-[2rem] object-cover sm:h-[420px]"
+          />
+        </div>
+        <div
+          class="absolute -bottom-5 left-4 flex items-center gap-3 rounded-2xl border border-ink-900/5 bg-white/95 p-3.5 shadow-xl shadow-ink-900/10 backdrop-blur sm:left-8"
+        >
+          <span
+            class="grid h-9 w-9 place-items-center rounded-full bg-teal-50 text-teal-600"
+          >
+            <Icon name="shield-check" class="h-4 w-4" />
+          </span>
+          <div>
+            <p class="text-[11px] font-bold text-ink-900">Compromiso Lumen</p>
+            <p class="text-[10px] text-ink-400">Cuidado con propósito</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    aria-label="Misión y visión"
+    class="mx-auto max-w-7xl px-6 pb-16 md:pb-24"
+  >
+    <div class="grid grid-cols-1 gap-5 lg:grid-cols-2">
+      <article
+        class="relative overflow-hidden rounded-3xl bg-ink-900 p-8 text-white shadow-[0_30px_70px_-40px_rgba(6,27,29,0.8)] sm:p-10"
+      >
+        <div
+          aria-hidden="true"
+          class="pointer-events-none absolute -top-16 -right-16 h-56 w-56 rounded-full bg-teal-500/20 blur-3xl"
+        >
+        </div>
+        <span
+          class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-[10px] font-bold tracking-[0.2em] text-teal-200 uppercase"
+        >
+          <Icon name="heart-pulse" class="h-3.5 w-3.5" />
+          Nuestra misión
+        </span>
+        <h2 class="mt-5 font-display text-3xl leading-tight tracking-tight">
+          Cuidar la salud y el bienestar de cada mascota.
+        </h2>
+        <p class="mt-4 text-sm leading-relaxed text-white/65">
+          Lo hacemos con excelencia médica, tecnología y un trato profundamente
+          humano. Cada consulta es una oportunidad para generar confianza y
+          mejorar la vida de una familia.
+        </p>
+      </article>
+
+      <article
+        class="relative overflow-hidden rounded-3xl border border-ink-900/6 bg-white p-8 shadow-[0_1px_0_rgba(11,43,46,0.03)] sm:p-10"
+      >
+        <span
+          class="inline-flex items-center gap-2 rounded-full bg-cream px-3 py-1.5 text-[10px] font-bold tracking-[0.2em] text-ink-500 uppercase"
+        >
+          <Icon name="sparkles" class="h-3.5 w-3.5 text-brand-500" />
+          Nuestra visión
+        </span>
+        <h2 class="mt-5 font-display text-3xl leading-tight tracking-tight text-ink-900">
+          Ser la red veterinaria líder de la región.
+        </h2>
+        <p class="mt-4 text-sm leading-relaxed text-ink-500">
+          Reconocida por su innovación, la calidad de sus servicios y un sólido
+          compromiso con la comunidad. Queremos que cada familia sienta que su
+          mascota está en las mejores manos.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section
+    aria-labelledby="values-title"
+    class="border-y border-ink-900/6 bg-white"
+  >
+    <div class="mx-auto max-w-7xl px-6 py-16 md:py-24">
+      <div class="mx-auto max-w-2xl text-center">
+        <span
+          class="text-[11px] font-bold tracking-[0.22em] text-teal-600 uppercase"
+        >
+          Lo que nos guía
+        </span>
+        <h2
+          id="values-title"
+          class="mt-3 font-display text-3xl leading-tight tracking-tight text-ink-900 sm:text-4xl md:text-5xl"
+        >
+          Nuestros valores
+        </h2>
+        <p class="mt-4 text-base leading-relaxed text-ink-500">
+          Principios que se sienten en cada consulta, en cada decisión y en cada
+          conversación con las familias.
+        </p>
+      </div>
+
+      <div class="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {
+          values.map((value) => (
+            <article class="group rounded-3xl border border-ink-900/6 bg-cream/70 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-teal-200 hover:bg-white hover:shadow-[0_28px_60px_-32px_rgba(11,43,46,0.3)]">
+              <span class="grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-teal-50 to-teal-100 text-teal-700 transition-colors group-hover:from-teal-500 group-hover:to-teal-600 group-hover:text-white">
+                <Icon name={value.icon} class="h-6 w-6" />
+              </span>
+              <h3 class="mt-5 text-base font-bold text-ink-900">
+                {value.title}
+              </h3>
+              <p class="mt-2 text-sm leading-relaxed text-ink-500">
+                {value.description}
+              </p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section
+    id="contacto"
+    aria-labelledby="contact-title"
+    class="mx-auto max-w-7xl px-6 py-16 md:py-24"
+  >
+    <div class="grid grid-cols-1 gap-5 lg:grid-cols-5">
+      <div class="lg:col-span-3">
+        <span
+          class="text-[11px] font-bold tracking-[0.22em] text-teal-600 uppercase"
+        >
+          Hablemos
+        </span>
+        <h2
+          id="contact-title"
+          class="mt-3 max-w-md font-display text-3xl leading-tight tracking-tight text-ink-900 sm:text-4xl md:text-5xl"
+        >
+          Estamos cerca, también cuando nos necesitás.
+        </h2>
+        <p class="mt-4 max-w-lg text-base leading-relaxed text-ink-500">
+          Escribinos, llamanos o acercate a la clínica. Vamos a acompañarte en
+          todo el proceso, desde la primera consulta hasta el seguimiento.
+        </p>
+
+        <div class="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
+          <a
+            href="tel:+5493812335259"
+            class="flex items-center gap-3 rounded-2xl border border-ink-900/8 bg-white p-4 transition-colors hover:border-teal-200"
+          >
+            <span class="grid h-10 w-10 place-items-center rounded-xl bg-teal-50 text-teal-600">
+              <Icon name="phone" class="h-5 w-5" />
+            </span>
+            <span>
+              <span class="block text-[10px] font-bold tracking-wider text-ink-400 uppercase">Teléfono</span>
+              <span class="block text-sm font-bold text-ink-900">+54 9 381 233 5259</span>
+            </span>
+          </a>
+
+          <a
+            href="mailto:sanfelipe@gmail.com"
+            class="flex items-center gap-3 rounded-2xl border border-ink-900/8 bg-white p-4 transition-colors hover:border-teal-200"
+          >
+            <span class="grid h-10 w-10 place-items-center rounded-xl bg-brand-100 text-brand-600">
+              <Icon name="mail" class="h-5 w-5" />
+            </span>
+            <span>
+              <span class="block text-[10px] font-bold tracking-wider text-ink-400 uppercase">Email</span>
+              <span class="block text-sm font-bold text-ink-900">sanfelipe@gmail.com</span>
+            </span>
+          </a>
+
+          <div class="flex items-center gap-3 rounded-2xl border border-ink-900/8 bg-white p-4">
+            <span class="grid h-10 w-10 place-items-center rounded-xl bg-ink-100 text-ink-700">
+              <Icon name="map-pin" class="h-5 w-5" />
+            </span>
+            <span>
+              <span class="block text-[10px] font-bold tracking-wider text-ink-400 uppercase">Ubicación</span>
+              <span class="block text-sm font-bold text-ink-900">San Miguel de Tucumán</span>
+            </span>
+          </div>
+
+          <div class="flex items-center gap-3 rounded-2xl border border-ink-900/8 bg-white p-4">
+            <span class="grid h-10 w-10 place-items-center rounded-xl bg-teal-50 text-teal-600">
+              <Icon name="clock" class="h-5 w-5" />
+            </span>
+            <span>
+              <span class="block text-[10px] font-bold tracking-wider text-ink-400 uppercase">Horarios</span>
+              <span class="block text-sm font-bold text-ink-900">Lun a sáb · 8 a 20 h</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-2">
+        <div
+          class="flex h-full flex-col justify-between rounded-3xl bg-ink-900 p-7 text-white shadow-[0_30px_70px_-40px_rgba(6,27,29,0.8)]"
+        >
+          <div>
+            <span class="grid h-12 w-12 place-items-center rounded-2xl bg-white/10 text-teal-300">
+              <Icon name="whatsapp" class="h-6 w-6" />
+            </span>
+            <h3 class="mt-5 font-display text-2xl leading-tight">
+              Reservá por WhatsApp
+            </h3>
+            <p class="mt-3 text-sm leading-relaxed text-white/60">
+              Contanos qué necesita tu mascota y coordinamos el mejor horario
+              para vos.
+            </p>
+          </div>
+          <a
+            href="https://wa.me/5493812335259?text=Hola%20Lumen%2C%20quiero%20reservar%20un%20turno"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-bold text-ink-900 transition-colors hover:bg-teal-50"
+          >
+            Escribir ahora
+            <Icon
+              name="arrow-up-right"
+              class="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTA />
+</BaseLayout>

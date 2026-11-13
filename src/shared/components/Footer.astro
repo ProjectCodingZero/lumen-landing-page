@@ -1,11 +1,164 @@
+---
+import Icon from "../../components/ui/Icon.astro";
 
-<footer class="bg-teal-200 border-t border-gray-400/50 py-6 text-center text-xs text-gray-700">
-  <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-    <p>© Veterinaria San Felipe & Santa Fe - San Miguel de Tucumán</p>
-    <div class="flex space-x-4">
-      <a href="#" class="hover:text-brand-600 transition">Términos</a>
-      <a href="#" class="hover:text-brand-600 transition">Privacidad</a>
-      <a href="#" class="hover:text-brand-600 transition">Soporte</a>
+const year = new Date().getFullYear();
+
+const exploreLinks = [
+  { href: "/", label: "Inicio" },
+  { href: "/services/", label: "Servicios" },
+  { href: "/about/", label: "Nosotros" },
+  { href: "/services/#turnos", label: "Reservar turno" },
+];
+
+const serviceLinks = [
+  { href: "/services/#consultas", label: "Consultas médicas" },
+  { href: "/services/#cirugia", label: "Cirugía y laboratorio" },
+  { href: "/services/#vacunacion", label: "Vacunación" },
+  { href: "/services/#estetica", label: "Estética" },
+];
+---
+
+<footer class="bg-ink-950 text-white/70">
+  <div class="mx-auto max-w-7xl px-6 pt-14 pb-8">
+    <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-12 lg:gap-8">
+      <div class="lg:col-span-4">
+        <a href="/" class="flex items-center gap-3" aria-label="Lumen, ir al inicio">
+          <span
+            class="grid h-11 w-11 place-items-center rounded-2xl bg-white/10 text-teal-300"
+          >
+            <Icon name="paw" class="h-6 w-6" />
+          </span>
+          <span class="leading-none">
+            <span class="block font-display text-xl font-semibold text-white">
+              Lumen
+            </span>
+            <span
+              class="mt-1 block text-[9px] font-bold tracking-[0.26em] text-white/40 uppercase"
+            >
+              Veterinaria · Tucumán
+            </span>
+          </span>
+        </a>
+        <p class="mt-5 max-w-xs text-sm leading-relaxed text-white/55">
+          Cuidar mejor, gestionar más simple. Una plataforma pensada para
+          conectar a las familias con el mejor cuidado veterinario.
+        </p>
+        <div class="mt-6 flex items-center gap-3">
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="grid h-10 w-10 place-items-center rounded-full border border-white/12 text-white/60 transition-colors hover:border-teal-400/50 hover:text-teal-300"
+            aria-label="Lumen en Instagram"
+          >
+            <Icon name="instagram" class="h-4 w-4" />
+          </a>
+          <a
+            href="https://www.facebook.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="grid h-10 w-10 place-items-center rounded-full border border-white/12 text-white/60 transition-colors hover:border-teal-400/50 hover:text-teal-300"
+            aria-label="Lumen en Facebook"
+          >
+            <Icon name="facebook" class="h-4 w-4" />
+          </a>
+          <a
+            href="https://wa.me/5493812335259"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="grid h-10 w-10 place-items-center rounded-full border border-white/12 text-white/60 transition-colors hover:border-teal-400/50 hover:text-teal-300"
+            aria-label="Escribinos por WhatsApp"
+          >
+            <Icon name="whatsapp" class="h-4 w-4" />
+          </a>
+        </div>
+      </div>
+
+      <nav aria-label="Enlaces del sitio" class="lg:col-span-2">
+        <h2 class="text-[11px] font-bold tracking-[0.2em] text-white/40 uppercase">
+          Explorar
+        </h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          {
+            exploreLinks.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class="text-white/60 transition-colors hover:text-white"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+
+      <nav aria-label="Servicios" class="lg:col-span-3">
+        <h2 class="text-[11px] font-bold tracking-[0.2em] text-white/40 uppercase">
+          Servicios
+        </h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          {
+            serviceLinks.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class="text-white/60 transition-colors hover:text-white"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+
+      <div class="lg:col-span-3">
+        <h2 class="text-[11px] font-bold tracking-[0.2em] text-white/40 uppercase">
+          Contacto
+        </h2>
+        <ul class="mt-4 space-y-3 text-sm">
+          <li class="flex items-start gap-2.5">
+            <Icon name="map-pin" class="mt-0.5 h-4 w-4 shrink-0 text-teal-300" />
+            <span class="text-white/60">San Miguel de Tucumán, Argentina</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <Icon name="phone" class="mt-0.5 h-4 w-4 shrink-0 text-teal-300" />
+            <a
+              href="tel:+5493812335259"
+              class="text-white/60 transition-colors hover:text-white"
+            >
+              +54 9 381 233 5259
+            </a>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <Icon name="mail" class="mt-0.5 h-4 w-4 shrink-0 text-teal-300" />
+            <a
+              href="mailto:sanfelipe@gmail.com"
+              class="break-all text-white/60 transition-colors hover:text-white"
+            >
+              sanfelipe@gmail.com
+            </a>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <Icon name="clock" class="mt-0.5 h-4 w-4 shrink-0 text-teal-300" />
+            <span class="text-white/60">Lunes a sábado · 8 a 20 h</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div
+      class="mt-12 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-[11px] text-white/40 sm:flex-row"
+    >
+      <p>
+        © {year} Lumen Veterinaria · San Miguel de Tucumán, Argentina
+      </p>
+      <p class="flex items-center gap-1.5">
+        Hecho con cuidado en Tucumán
+        <Icon name="heart-pulse" class="h-3.5 w-3.5 text-teal-400" />
+      </p>
     </div>
   </div>
 </footer>

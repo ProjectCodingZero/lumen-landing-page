@@ -1,0 +1,51 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Icon from "../components/ui/Icon.astro";
+---
+
+<BaseLayout
+  title="Página no encontrada | Lumen Veterinaria"
+  description="La página que buscás no existe o cambió de lugar. Volvé al inicio o conocé nuestros servicios veterinarios."
+  noindex={true}
+>
+  <section
+    aria-labelledby="not-found-title"
+    class="mx-auto flex max-w-3xl flex-col items-center px-6 py-24 text-center md:py-32"
+  >
+    <span
+      class="grid h-16 w-16 place-items-center rounded-3xl bg-ink-900 text-teal-300 shadow-xl shadow-ink-900/15"
+    >
+      <Icon name="paw" class="h-8 w-8" />
+    </span>
+    <p class="mt-8 font-display text-6xl text-teal-600 italic">404</p>
+    <h1
+      id="not-found-title"
+      class="mt-2 font-display text-3xl leading-tight tracking-tight text-ink-900 sm:text-5xl"
+    >
+      Esta página se fue a pasear.
+    </h1>
+    <p class="mt-4 max-w-md text-base leading-relaxed text-ink-500">
+      No encontramos lo que buscabas, pero tu mascota sigue en buenas manos.
+      Volvé al inicio o descubrí todo lo que Lumen puede hacer por ella.
+    </p>
+
+    <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+      <a
+        href="/"
+        class="group inline-flex items-center justify-center gap-2 rounded-full bg-ink-900 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-ink-900/20 transition-all hover:-translate-y-0.5 hover:bg-teal-700"
+      >
+        Volver al inicio
+        <Icon
+          name="arrow-right"
+          class="h-4 w-4 transition-transform group-hover:translate-x-1"
+        />
+      </a>
+      <a
+        href="/services/"
+        class="inline-flex items-center justify-center gap-2 rounded-full border border-ink-900/15 bg-white px-6 py-3.5 text-sm font-bold text-ink-800 transition-colors hover:border-ink-900/30"
+      >
+        Ver servicios
+      </a>
+    </div>
+  </section>
+</BaseLayout>

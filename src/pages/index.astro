@@ -1,16 +1,55 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-/*
-import HeroSection from "../shared/components/HeroSection.tsx";
-import BookingStepCard from "../shared/components/BookingStepCard.tsx";
-import LocationAndReviewsCard from "../shared/components/LocationAndReviewsCard.tsx";
-*/
-const title = "Lumen - Home";
+import Hero from "../components/landing/Hero.astro";
+import Metrics from "../components/landing/Metrics.astro";
+import Features from "../components/landing/Features.astro";
+import Platform from "../components/landing/Platform.astro";
+import Steps from "../components/landing/Steps.astro";
+import Testimonials from "../components/landing/Testimonials.astro";
+import FAQ from "../components/landing/FAQ.astro";
+import CTA from "../components/landing/CTA.astro";
+import { faqs } from "../data/faqs.ts";
 
+const title = "Lumen | Clínica veterinaria y gestión integral en Tucumán";
+const description =
+  "Turnos online, historia clínica digital y gestión para tu clínica veterinaria en San Miguel de Tucumán. Cuidar mejor, gestionar más simple con Lumen.";
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Lumen Veterinaria",
+  url: "https://lumen-soft.app/",
+  inLanguage: "es-AR",
+  publisher: {
+    "@id": "https://lumen-soft.app/#organizacion",
+  },
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
 ---
 
-<BaseLayout title={title}>
-  <div class="bg-red-500">
-  ¡Si ves este recuadro rojo, Tailwind está funcionando!
-  </div>
+<BaseLayout
+  title={title}
+  description={description}
+  jsonLd={[websiteSchema, faqSchema]}
+>
+  <Hero />
+  <Metrics />
+  <Features />
+  <Platform />
+  <Steps />
+  <Testimonials />
+  <FAQ />
+  <CTA />
 </BaseLayout>

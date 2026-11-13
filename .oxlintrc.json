@@ -7,6 +7,12 @@
   },
   "overrides": [
     {
+      "files": ["src/env.d.ts"],
+      "rules": {
+        "typescript/triple-slash-reference": "off"
+      }
+    },
+    {
       "files": ["src/Routes.tsx"],
       "rules": {
         "react/only-export-components": "off"

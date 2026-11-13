@@ -1,30 +1,148 @@
 ---
-import '../styles/index.css';
+import "../styles/index.css";
 
-import Header from '../shared/components/Header.astro';
-import Footer from '../shared/components/Footer.astro';
+import Header from "../shared/components/Header.astro";
+import Footer from "../shared/components/Footer.astro";
 
 interface Props {
   title?: string;
+  description?: string;
+  image?: string;
+  type?: "website" | "article";
+  noindex?: boolean;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
-const { title = "Lumen" }: Props = Astro.props;
+
+const {
+  title = "Lumen | Gestión veterinaria inteligente en Tucumán",
+  description =
+    "Lumen es la plataforma que conecta a tu clínica veterinaria con cada familia: turnos online, historia clínica digital, recordatorios automáticos y métricas claras para decidir mejor.",
+  image = "/images/og-lumen.jpg",
+  type = "website",
+  noindex = false,
+  jsonLd,
+} = Astro.props;
+
+const site = Astro.site ?? new URL("https://lumen-soft.app");
+const pathname = Astro.url.pathname;
+const canonicalPath = pathname === "/" ? "/" : `${pathname.replace(/\/+$/, "")}/`;
+const canonical = new URL(canonicalPath, site).href;
+const socialImage = new URL(image, site).href;
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "VeterinaryCare",
+  "@id": new URL("/#organizacion", site).href,
+  name: "Lumen Veterinaria",
+  description:
+    "Clínica veterinaria y plataforma de gestión integral en San Miguel de Tucumán.",
+  url: new URL("/", site).href,
+  image: new URL("/images/og-lumen.jpg", site).href,
+  telephone: "+5493812335259",
+  email: "sanfelipe@gmail.com",
+  priceRange: "$$",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "San Miguel de Tucumán",
+    addressRegion: "Tucumán",
+    addressCountry: "AR",
+  },
+  areaServed: {
+    "@type": "City",
+    name: "San Miguel de Tucumán",
+  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "08:00",
+      closes: "20:00",
+    },
+  ],
+};
+
+const extraSchemas = jsonLd
+  ? Array.isArray(jsonLd)
+    ? jsonLd
+    : [jsonLd]
+  : [];
+
+const schemas = [organizationSchema, ...extraSchemas];
 ---
+
 <!doctype html>
-<html lang="es">
+<html lang="es-AR">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0B2B2E" />
     <meta name="generator" content={Astro.generator} />
+
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta
+      name="robots"
+      content={noindex ? "noindex, nofollow" : "index, follow, max-image-preview:large"}
+    />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={type} />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:site_name" content="Lumen Veterinaria" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Lumen Veterinaria, cuidado y gestión para tu clínica"
+    />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+
+    <!-- Tipografías -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    {
+      schemas.map((schema) => (
+        <script
+          type="application/ld+json"
+          set:html={JSON.stringify(schema)}
+          is:inline
+        />
+      ))
+    }
   </head>
-  <body class="min-h-screen bg-gray-100 flex flex-col font-sans text-gray-800 antialiased">
-  
-      <Header />
-      <main>
-        <slot />
-      </main>
-      
-      <Footer />
+
+  <body class="flex min-h-screen flex-col bg-cream font-sans text-ink-900 antialiased">
+    <a
+      href="#contenido"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-full focus:bg-ink-900 focus:px-5 focus:py-3 focus:text-sm focus:font-bold focus:text-white"
+    >
+      Saltar al contenido
+    </a>
+
+    <Header />
+
+    <main id="contenido" class="flex-1">
+      <slot />
+    </main>
+
+    <Footer />
   </body>
 </html>
