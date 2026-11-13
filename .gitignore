@@ -39,7 +39,7 @@ node_modules/
 # environment variables
 .env
 .env.production
-
+.wrangler
 # macOS-specific files
 .DS_Store
 

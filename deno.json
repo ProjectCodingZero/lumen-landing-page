@@ -14,11 +14,13 @@
     "dev": "deno run -A npm:astro dev",
     "build": "deno run -A npm:astro build",
     "lint": "deno run -A npm:oxlint",
-    "preview": "deno run --allow-net --allow-read jsr:@std/http/file-server dist/client --port 4322",
+    "preview": "deno task build && deno run -A npm:wrangler dev",
     "start": "deno task build && deno task preview",
-    "astro": "deno run -A npm:astro"
+    "astro": "deno run -A npm:astro",
+    "deploy": "deno task build && deno run -A npm:wrangler deploy"
   },
   "imports": {
+    "@astrojs/cloudflare": "npm:@astrojs/cloudflare@^14.4.7",
     "@astrojs/sitemap": "npm:@astrojs/sitemap@^3.7.4",
     "@deno/astro-adapter": "npm:@deno/astro-adapter@^0.6.0",
     "@tailwindcss/vite": "npm:@tailwindcss/vite@^4.3.5",
@@ -35,7 +37,8 @@
     "@/": "./src/",
     "@features/": "./src/features/",
     "@shared/": "./src/shared/",
-    "@layout/": "./src/layout/"
+    "@layout/": "./src/layout/",
+    "wrangler": "npm:wrangler@^4.161.0"
   },
   "fmt": {
     "useTabs": false,
