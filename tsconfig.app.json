@@ -20,7 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "verbatimModuleSyntax": true,
-    "baseUrl": "./",
     /* Alias de rutas */
     "paths": {
       "*": ["./*"],
