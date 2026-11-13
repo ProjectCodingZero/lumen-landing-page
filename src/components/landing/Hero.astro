@@ -1,5 +1,6 @@
 ---
 import Icon from "../ui/Icon.astro";
+import { productUrls } from "../../data/products.ts";
 
 const trustedPets = [
   { src: "/images/pet-dog.jpg", alt: "Perro paciente de Lumen" },
@@ -43,39 +44,47 @@ const trustedPets = [
           ></span>
           <span class="relative inline-flex h-2 w-2 rounded-full bg-teal-500"></span>
         </span>
-        Plataforma veterinaria integral · Tucumán
+        Lumen App + Lumen Web · Ecosistema veterinario
       </span>
 
       <h1
         id="hero-title"
         class="mt-6 font-display text-[2.75rem] leading-[0.98] tracking-tight text-ink-900 sm:text-6xl lg:text-[4.4rem]"
       >
-        Cuidar mejor.<br />
-        <span class="text-teal-600 italic">Gestionar</span> más simple.
+        Veterinarias y familias,<br />
+        <span class="text-teal-600 italic">por fin conectadas.</span>
       </h1>
 
       <p class="mt-6 max-w-lg text-base leading-relaxed text-ink-500 sm:text-lg">
-        Lumen conecta a tu clínica veterinaria con cada familia: turnos sin
-        fricción, historia clínica digital y decisiones basadas en datos reales.
-        Todo en un solo lugar.
+        Lumen une a tu clínica con cada familia: una app para que los tutores
+        cuiden a su mascota y un CRM para que el equipo veterinario gestione
+        todo desde un solo lugar.
       </p>
 
       <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
         <a
-          href="/services/#turnos"
+          href={productUrls.app}
+          target="_blank"
+          rel="noopener noreferrer"
           class="group inline-flex items-center justify-center gap-2 rounded-full bg-ink-900 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-ink-900/20 transition-all hover:-translate-y-0.5 hover:bg-teal-700 hover:shadow-xl active:translate-y-0"
         >
-          Reservar un turno
+          Abrir Lumen App
           <Icon
-            name="arrow-right"
-            class="h-4 w-4 transition-transform group-hover:translate-x-1"
+            name="arrow-up-right"
+            class="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
           />
         </a>
         <a
-          href="#plataforma"
-          class="inline-flex items-center justify-center gap-2 rounded-full border border-ink-900/15 bg-white/70 px-6 py-3.5 text-sm font-bold text-ink-800 backdrop-blur transition-colors hover:border-ink-900/30 hover:bg-white"
+          href={productUrls.web}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group inline-flex items-center justify-center gap-2 rounded-full border border-ink-900/15 bg-white/70 px-6 py-3.5 text-sm font-bold text-ink-800 backdrop-blur transition-colors hover:border-ink-900/30 hover:bg-white"
         >
-          Ver la plataforma
+          Ingresar a Lumen Web
+          <Icon
+            name="arrow-up-right"
+            class="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+          />
         </a>
       </div>
 
@@ -97,16 +106,14 @@ const trustedPets = [
           }
         </div>
         <div>
-          <div class="flex items-center gap-1 text-brand-500">
-            {
-              Array.from({ length: 5 }).map(() => (
-                <Icon name="star" class="h-3.5 w-3.5" />
-              ))
-            }
-            <span class="ml-1 text-xs font-bold text-ink-800">4.9/5</span>
+          <div class="flex items-center gap-1.5 text-teal-600">
+            <Icon name="check" class="h-3.5 w-3.5" />
+            <span class="text-xs font-bold text-ink-800">
+              Una sola historia clínica
+            </span>
           </div>
           <p class="mt-0.5 text-xs font-medium text-ink-500">
-            Más de 1.200 familias confían en Lumen
+            Tutores y clínicas viendo la misma información, en tiempo real.
           </p>
         </div>
       </div>
@@ -125,7 +132,7 @@ const trustedPets = [
         <div class="relative overflow-hidden rounded-[2rem]">
           <img
             src="/images/hero-dog.jpg"
-            alt="Perro sonriente atendido en la clínica veterinaria Lumen"
+            alt="Perro sonriente junto a su tutora, conectados a través de Lumen"
             width="1200"
             height="1200"
             fetchpriority="high"
@@ -142,7 +149,7 @@ const trustedPets = [
             <p
               class="text-[10px] font-bold tracking-[0.22em] text-white/70 uppercase"
             >
-              Ficha digital
+              Ficha digital compartida
             </p>
             <div class="mt-1 flex items-end justify-between gap-4">
               <div>

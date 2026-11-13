@@ -1,10 +1,11 @@
 ---
 import Icon from "../ui/Icon.astro";
+import { productUrls } from "../../data/products.ts";
 
 const highlights = [
-  "Agenda unificada para todo el equipo",
-  "Historia clínica siempre a mano",
-  "Recordatorios que reducen ausencias",
+  "Agenda, pacientes e historia clínica",
+  "Tutores y comunicación directa",
+  "Inventario, especialistas y tratamientos",
   "Reportes claros para decidir mejor",
 ];
 
@@ -18,9 +19,9 @@ const appointments = [
 ---
 
 <section
-  id="plataforma"
+  id="web"
   aria-labelledby="platform-title"
-  class="relative px-4 pb-16 sm:px-6 md:pb-24"
+  class="relative px-4 pt-16 pb-16 sm:px-6 md:pt-24 md:pb-24"
 >
   <div
     class="relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-ink-900 px-6 py-12 shadow-[0_40px_100px_-45px_rgba(6,27,29,0.9)] sm:rounded-[2.5rem] sm:px-10 lg:px-14 lg:py-16"
@@ -50,19 +51,19 @@ const appointments = [
         <span
           class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-[10px] font-bold tracking-[0.2em] text-teal-200 uppercase"
         >
-          <Icon name="paw" class="h-3.5 w-3.5" />
-          Lumen para clínicas
+          <Icon name="stethoscope" class="h-3.5 w-3.5" />
+          Lumen Web · CRM veterinario
         </span>
         <h2
           id="platform-title"
           class="mt-5 font-display text-3xl leading-tight tracking-tight sm:text-4xl lg:text-[2.9rem]"
         >
-          Decisiones claras,<br />
-          <span class="text-teal-300 italic">clínica ordenada.</span>
+          Tu clínica, ordenada.<br />
+          <span class="text-teal-300 italic">Decisiones claras.</span>
         </h2>
         <p class="mt-5 text-sm leading-relaxed text-white/65 sm:text-base">
-          Un panel pensado para el día a día y también para la dirección: menos
-          planillas, más tiempo para lo importante.
+          Agenda, pacientes, tutores, inventario y reportes en un solo panel.
+          Menos planillas, más tiempo para cuidar.
         </p>
 
         <ul class="mt-7 space-y-3">
@@ -79,13 +80,15 @@ const appointments = [
         </ul>
 
         <a
-          href="/about/"
+          href={productUrls.web}
+          target="_blank"
+          rel="noopener noreferrer"
           class="group mt-8 inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-bold text-ink-900 transition-colors hover:bg-teal-50"
         >
-          Conocer nuestro enfoque
+          Abrir Lumen Web
           <Icon
-            name="arrow-right"
-            class="h-4 w-4 transition-transform group-hover:translate-x-1"
+            name="arrow-up-right"
+            class="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
           />
         </a>
       </div>
@@ -112,7 +115,7 @@ const appointments = [
             <span
               class="rounded-md bg-white/8 px-2 py-0.5 text-[9px] font-medium tracking-wide text-white/45"
             >
-              panel.lumen.app
+              panel.lumen-soft.app
             </span>
           </div>
 

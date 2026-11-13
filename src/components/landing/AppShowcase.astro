@@ -1,0 +1,286 @@
+---
+import Icon from "../ui/Icon.astro";
+import { productUrls } from "../../data/products.ts";
+
+const benefits = [
+  "Todas tus mascotas en un solo lugar",
+  "Reservá turnos y recibí recordatorios",
+  "Consultá vacunas, estudios e indicaciones",
+  "Escribile a tu clínica sin salir de la app",
+];
+---
+
+<section
+  id="app"
+  aria-labelledby="app-title"
+  class="relative isolate overflow-hidden border-y border-ink-900/6 bg-white"
+>
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(65%_60%_at_20%_10%,#fce7d8_0%,transparent_65%)]"
+  >
+  </div>
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute top-10 -left-24 -z-10 h-72 w-72 rounded-full bg-teal-100/70 blur-3xl"
+  >
+  </div>
+
+  <div
+    class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-6 py-16 md:py-24 lg:grid-cols-2 lg:gap-16"
+  >
+    <!-- Copy -->
+    <div class="max-w-xl">
+      <span
+        class="inline-flex items-center gap-2 rounded-full border border-ink-900/10 bg-white/80 px-3 py-1.5 text-[10px] font-bold tracking-[0.2em] text-ink-700 uppercase shadow-sm backdrop-blur"
+      >
+        <Icon name="paw" class="h-3.5 w-3.5 text-teal-600" />
+        Lumen App · Para tutores
+      </span>
+      <h2
+        id="app-title"
+        class="mt-5 font-display text-3xl leading-tight tracking-tight text-ink-900 sm:text-4xl lg:text-5xl"
+      >
+        Tu mascota,<br />
+        <span class="text-teal-600 italic">siempre cerca.</span>
+      </h2>
+      <p class="mt-5 text-base leading-relaxed text-ink-500">
+        La app que conecta a cada familia con su clínica: turnos, vacunas,
+        historia clínica y recordatorios en el celular, sin llamados ni
+        planillas.
+      </p>
+
+      <ul class="mt-7 grid grid-cols-1 gap-3 sm:grid-cols-2">
+        {
+          benefits.map((benefit) => (
+            <li class="flex items-start gap-2.5 text-sm text-ink-600">
+              <span class="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-teal-50 text-teal-600">
+                <Icon name="check" class="h-3 w-3" />
+              </span>
+              {benefit}
+            </li>
+          ))
+        }
+      </ul>
+
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+        <a
+          href={productUrls.app}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group inline-flex items-center justify-center gap-2 rounded-full bg-ink-900 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-ink-900/20 transition-all hover:-translate-y-0.5 hover:bg-teal-700"
+        >
+          Abrir Lumen App
+          <Icon
+            name="arrow-up-right"
+            class="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+          />
+        </a>
+        <a
+          href="#web"
+          class="inline-flex items-center justify-center gap-2 rounded-full border border-ink-900/15 bg-white/70 px-6 py-3.5 text-sm font-bold text-ink-800 backdrop-blur transition-colors hover:border-ink-900/30 hover:bg-white"
+        >
+          Conocer Lumen Web
+        </a>
+      </div>
+
+      <p class="mt-4 text-xs font-medium text-ink-400">
+        Para iOS y Android · Tus datos se sincronizan con Lumen Web.
+      </p>
+    </div>
+
+    <!-- Mock de la app -->
+    <div class="relative mx-auto w-full max-w-md">
+      <div
+        aria-hidden="true"
+        class="absolute top-1/2 left-1/2 h-[26rem] w-[26rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-tr from-teal-200/70 via-brand-100/60 to-white blur-3xl"
+      >
+      </div>
+
+      <div
+        class="relative mx-auto w-[19rem] rotate-[-2deg] rounded-[2.9rem] border-[9px] border-ink-950 bg-ink-950 shadow-[0_45px_90px_-35px_rgba(6,27,29,0.65)] transition-transform duration-500 hover:rotate-0 sm:w-[21rem]"
+      >
+        <div
+          class="relative overflow-hidden rounded-[2.25rem] bg-cream"
+          role="img"
+          aria-label="Vista previa de Lumen App mostrando la ficha de Luna, su próximo turno y recordatorios de vacunación"
+        >
+          <div aria-hidden="true" class="select-none">
+            <!-- Barra de estado -->
+            <div
+              class="flex items-center justify-between bg-white px-6 pt-3 pb-2 text-[9px] font-bold text-ink-900"
+            >
+              <span>9:41</span>
+              <span class="flex items-center gap-1">
+                <span class="h-1.5 w-1.5 rounded-full bg-ink-900"></span>
+                <span class="h-1.5 w-3 rounded-sm bg-ink-900/80"></span>
+                <span class="h-2 w-4 rounded-sm border border-ink-900/70"></span>
+              </span>
+            </div>
+
+            <!-- Contenido -->
+            <div class="space-y-3 bg-cream px-4 pt-4 pb-3">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-[10px] font-medium text-ink-400">
+                    Bienvenida
+                  </p>
+                  <p class="text-base font-extrabold tracking-tight text-ink-900">
+                    Hola, Marta
+                  </p>
+                </div>
+                <span
+                  class="grid h-9 w-9 place-items-center rounded-full bg-ink-900 text-[11px] font-extrabold text-white"
+                >
+                  M
+                </span>
+              </div>
+
+              <!-- Mascota -->
+              <div class="relative overflow-hidden rounded-2xl shadow-md shadow-ink-900/10">
+                <img
+                  src="/images/hero-dog.jpg"
+                  alt=""
+                  width="400"
+                  height="400"
+                  loading="lazy"
+                  decoding="async"
+                  class="h-32 w-full object-cover"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-ink-950/70 via-transparent to-transparent"
+                >
+                </div>
+                <div class="absolute inset-x-3 bottom-2.5 flex items-end justify-between">
+                  <div>
+                    <p class="text-sm font-extrabold text-white">Luna</p>
+                    <p class="text-[9px] text-white/75">
+                      Golden Retriever · 3 años
+                    </p>
+                  </div>
+                  <span
+                    class="rounded-full bg-teal-400/25 px-2 py-0.5 text-[8px] font-bold text-teal-100 backdrop-blur"
+                  >
+                    Al día
+                  </span>
+                </div>
+              </div>
+
+              <!-- Próximo turno -->
+              <div
+                class="flex items-center gap-2.5 rounded-2xl bg-white p-3 shadow-sm ring-1 ring-ink-900/5"
+              >
+                <span
+                  class="grid h-9 w-9 place-items-center rounded-xl bg-brand-100 text-brand-600"
+                >
+                  <Icon name="calendar" class="h-4 w-4" />
+                </span>
+                <div class="min-w-0 flex-1">
+                  <p
+                    class="text-[8px] font-bold tracking-wider text-ink-400 uppercase"
+                  >
+                    Próximo turno
+                  </p>
+                  <p class="text-[11px] font-extrabold text-ink-900">
+                    Hoy · 16:30
+                  </p>
+                  <p class="text-[9px] font-semibold text-teal-600">
+                    Vacunación anual
+                  </p>
+                </div>
+                <span
+                  class="rounded-full bg-teal-50 px-2 py-1 text-[8px] font-bold text-teal-700"
+                >
+                  Confirmado
+                </span>
+              </div>
+
+              <!-- Accesos -->
+              <div class="grid grid-cols-2 gap-2.5">
+                <div
+                  class="rounded-2xl bg-white p-2.5 shadow-sm ring-1 ring-ink-900/5"
+                >
+                  <span
+                    class="grid h-7 w-7 place-items-center rounded-lg bg-teal-50 text-teal-600"
+                  >
+                    <Icon name="syringe" class="h-3.5 w-3.5" />
+                  </span>
+                  <p class="mt-1.5 text-[10px] font-bold text-ink-900">
+                    Vacunas
+                  </p>
+                  <p class="text-[8px] text-ink-400">3 al día</p>
+                </div>
+                <div
+                  class="rounded-2xl bg-white p-2.5 shadow-sm ring-1 ring-ink-900/5"
+                >
+                  <span
+                    class="grid h-7 w-7 place-items-center rounded-lg bg-brand-100 text-brand-600"
+                  >
+                    <Icon name="clipboard" class="h-3.5 w-3.5" />
+                  </span>
+                  <p class="mt-1.5 text-[10px] font-bold text-ink-900">
+                    Historia
+                  </p>
+                  <p class="text-[8px] text-ink-400">Última consulta</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Barra inferior -->
+            <div
+              class="flex items-center justify-around border-t border-ink-900/5 bg-white px-4 py-2"
+            >
+              <span class="flex flex-col items-center gap-0.5 text-teal-600">
+                <Icon name="paw" class="h-4 w-4" />
+                <span class="text-[7px] font-bold">Inicio</span>
+              </span>
+              <span
+                class="flex flex-col items-center gap-0.5 text-ink-300"
+              >
+                <Icon name="calendar" class="h-4 w-4" />
+                <span class="text-[7px] font-semibold">Turnos</span>
+              </span>
+              <span class="flex flex-col items-center gap-0.5 text-ink-300">
+                <Icon name="bell" class="h-4 w-4" />
+                <span class="text-[7px] font-semibold">Alertas</span>
+              </span>
+              <span class="flex flex-col items-center gap-0.5 text-ink-300">
+                <Icon name="users" class="h-4 w-4" />
+                <span class="text-[7px] font-semibold">Perfil</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chips flotantes -->
+      <div
+        class="absolute -top-3 -right-2 hidden items-center gap-2 rounded-2xl border border-ink-900/5 bg-white/95 p-3 shadow-xl shadow-ink-900/10 backdrop-blur sm:flex lg:-right-6"
+      >
+        <span
+          class="grid h-8 w-8 place-items-center rounded-full bg-teal-50 text-teal-600"
+        >
+          <Icon name="check" class="h-4 w-4" />
+        </span>
+        <div>
+          <p class="text-[11px] font-bold text-ink-900">Todo sincronizado</p>
+          <p class="text-[9px] text-ink-400">con tu clínica</p>
+        </div>
+      </div>
+
+      <div
+        class="absolute -bottom-3 -left-2 hidden items-center gap-2 rounded-2xl border border-ink-900/5 bg-white/95 p-3 shadow-xl shadow-ink-900/10 backdrop-blur sm:flex lg:-left-5"
+      >
+        <span
+          class="grid h-8 w-8 place-items-center rounded-full bg-brand-100 text-brand-600"
+        >
+          <Icon name="bell" class="h-4 w-4" />
+        </span>
+        <div>
+          <p class="text-[11px] font-bold text-ink-900">Recordatorio enviado</p>
+          <p class="text-[9px] text-ink-400">Control en 7 días</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

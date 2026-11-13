@@ -14,9 +14,9 @@ interface Props {
 }
 
 const {
-  title = "Lumen | Gestión veterinaria inteligente en Tucumán",
+  title = "Lumen | La plataforma que conecta veterinarias y familias",
   description =
-    "Lumen es la plataforma que conecta a tu clínica veterinaria con cada familia: turnos online, historia clínica digital, recordatorios automáticos y métricas claras para decidir mejor.",
+    "Lumen App para tutores y Lumen Web para clínicas: turnos, historia clínica compartida, recordatorios y gestión veterinaria en un mismo ecosistema.",
   image = "/images/og-lumen.jpg",
   type = "website",
   noindex = false,
@@ -31,16 +31,17 @@ const socialImage = new URL(image, site).href;
 
 const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": "VeterinaryCare",
+  "@type": "Organization",
   "@id": new URL("/#organizacion", site).href,
-  name: "Lumen Veterinaria",
+  name: "Lumen",
+  alternateName: "Lumen · Ecosistema veterinario",
   description:
-    "Clínica veterinaria y plataforma de gestión integral en San Miguel de Tucumán.",
+    "Plataforma que conecta clínicas veterinarias y familias: Lumen App para tutores y Lumen Web, el CRM para clínicas, con una historia clínica compartida.",
   url: new URL("/", site).href,
+  logo: new URL("/images/og-lumen.jpg", site).href,
   image: new URL("/images/og-lumen.jpg", site).href,
-  telephone: "+5493812335259",
   email: "sanfelipe@gmail.com",
-  priceRange: "$$",
+  telephone: "+5493812335259",
   address: {
     "@type": "PostalAddress",
     addressLocality: "San Miguel de Tucumán",
@@ -48,15 +49,17 @@ const organizationSchema = {
     addressCountry: "AR",
   },
   areaServed: {
-    "@type": "City",
-    name: "San Miguel de Tucumán",
+    "@type": "Country",
+    name: "Argentina",
   },
-  openingHoursSpecification: [
+  contactPoint: [
     {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      opens: "08:00",
-      closes: "20:00",
+      "@type": "ContactPoint",
+      contactType: "customer support",
+      telephone: "+5493812335259",
+      email: "sanfelipe@gmail.com",
+      areaServed: "AR",
+      availableLanguage: ["es-AR", "es"],
     },
   ],
 };
@@ -92,7 +95,7 @@ const schemas = [organizationSchema, ...extraSchemas];
     <!-- Open Graph -->
     <meta property="og:type" content={type} />
     <meta property="og:locale" content="es_AR" />
-    <meta property="og:site_name" content="Lumen Veterinaria" />
+    <meta property="og:site_name" content="Lumen" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
@@ -101,7 +104,7 @@ const schemas = [organizationSchema, ...extraSchemas];
     <meta property="og:image:height" content="630" />
     <meta
       property="og:image:alt"
-      content="Lumen Veterinaria, cuidado y gestión para tu clínica"
+      content="Lumen, ecosistema veterinario: Lumen App para tutores y Lumen Web para clínicas"
     />
 
     <!-- Twitter -->

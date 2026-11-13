@@ -7,6 +7,9 @@ import svgr from "vite-plugin-svgr";
 // https://astro.build/config
 export default defineConfig({
   site: "https://lumen-soft.app",
+  redirects: {
+    "/services": "/productos",
+  },
   integrations: [sitemap()],
   adapter: deno(),
   vite: {

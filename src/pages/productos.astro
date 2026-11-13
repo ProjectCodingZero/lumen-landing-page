@@ -1,0 +1,313 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Icon from "../components/ui/Icon.astro";
+import AppShowcase from "../components/landing/AppShowcase.astro";
+import Platform from "../components/landing/Platform.astro";
+import CTA from "../components/landing/CTA.astro";
+import { modules } from "../data/modules.ts";
+import { productUrls } from "../data/products.ts";
+
+const title = "Lumen App y Lumen Web | Productos del ecosistema Lumen";
+const description =
+  "Conocé los dos productos de Lumen: Lumen App para tutores y Lumen Web, el CRM para clínicas veterinarias. Misma historia clínica, datos y seguridad compartidos.";
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Inicio",
+      item: "https://lumen-soft.app/",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Productos",
+      item: "https://lumen-soft.app/productos/",
+    },
+  ],
+};
+
+const productsSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Productos Lumen",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      item: {
+        "@type": "SoftwareApplication",
+        name: "Lumen App",
+        applicationCategory: "HealthApplication",
+        operatingSystem: "iOS, Android",
+        description:
+          "App para tutores: turnos, historia clínica compartida, vacunas y recordatorios de cada mascota.",
+        url: productUrls.app,
+        publisher: { "@id": "https://lumen-soft.app/#organizacion" },
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      item: {
+        "@type": "SoftwareApplication",
+        name: "Lumen Web",
+        applicationCategory: "BusinessApplication",
+        operatingSystem: "Web",
+        description:
+          "CRM veterinario para clínicas: agenda, pacientes, tutores, inventario, especialistas y reportes.",
+        url: productUrls.web,
+        publisher: { "@id": "https://lumen-soft.app/#organizacion" },
+      },
+    },
+  ],
+};
+
+const security = [
+  {
+    icon: "users",
+    title: "Acceso por roles",
+    description:
+      "Cada persona del equipo ve solo la información que necesita: dirección, veterinarios y recepción con permisos distintos.",
+  },
+  {
+    icon: "shield-check",
+    title: "Datos cifrados",
+    description:
+      "La información de las mascotas y las familias viaja cifrada entre la app, el panel y nuestros servidores.",
+  },
+  {
+    icon: "clock",
+    title: "Respaldos periódicos",
+    description:
+      "La historia clínica se respalda en la nube de forma automática, para que nunca dependa de una sola computadora.",
+  },
+  {
+    icon: "check",
+    title: "Una sola fuente de verdad",
+    description:
+      "Tutores y clínica trabajan sobre el mismo registro. Sin planillas duplicadas ni datos desactualizados.",
+  },
+] as const;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  jsonLd={[breadcrumbSchema, productsSchema]}
+>
+  <!-- Hero -->
+  <section class="relative isolate overflow-hidden">
+    <div
+      aria-hidden="true"
+      class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60%_60%_at_50%_-10%,#d9eff0_0%,transparent_70%)]"
+    >
+    </div>
+    <div
+      aria-hidden="true"
+      class="pointer-events-none absolute inset-x-0 top-0 -z-10 h-64 bg-[radial-gradient(#c5d9d5_1px,transparent_1px)] opacity-30 [background-size:26px_26px] [mask-image:linear-gradient(to_bottom,black,transparent)]"
+    >
+    </div>
+
+    <div class="mx-auto max-w-3xl px-6 pt-14 pb-12 text-center md:pt-20">
+      <nav aria-label="Miga de pan" class="mb-6">
+        <ol class="flex items-center justify-center gap-2 text-xs font-semibold text-ink-400">
+          <li><a href="/" class="transition-colors hover:text-ink-900">Inicio</a></li>
+          <li aria-hidden="true">/</li>
+          <li aria-current="page" class="text-ink-700">Productos</li>
+        </ol>
+      </nav>
+
+      <span
+        class="inline-flex items-center gap-2 rounded-full border border-ink-900/10 bg-white/80 px-3.5 py-1.5 text-[11px] font-bold tracking-[0.16em] text-ink-700 uppercase shadow-sm backdrop-blur"
+      >
+        <Icon name="sparkles" class="h-3.5 w-3.5 text-teal-600" />
+        Dos productos, un ecosistema
+      </span>
+
+      <h1
+        class="mt-6 font-display text-4xl leading-[1.02] tracking-tight text-ink-900 sm:text-5xl md:text-6xl"
+      >
+        Una app para cuidar,
+        <span class="text-teal-600 italic"> un CRM para gestionar.</span>
+      </h1>
+      <p class="mx-auto mt-5 max-w-xl text-base leading-relaxed text-ink-500">
+        Lumen App acompaña a los tutores. Lumen Web ordena el trabajo de la
+        clínica. Ambos comparten la misma historia clínica, así que la
+        información viaja con cada mascota.
+      </p>
+
+      <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <a
+          href={productUrls.app}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group inline-flex items-center gap-2 rounded-full bg-ink-900 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-ink-900/20 transition-all hover:-translate-y-0.5 hover:bg-teal-700"
+        >
+          <Icon name="paw" class="h-4 w-4 text-teal-300" />
+          Abrir Lumen App
+          <Icon
+            name="arrow-up-right"
+            class="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+          />
+        </a>
+        <a
+          href={productUrls.web}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group inline-flex items-center gap-2 rounded-full border border-ink-900/15 bg-white/70 px-6 py-3.5 text-sm font-bold text-ink-800 backdrop-blur transition-colors hover:border-ink-900/30 hover:bg-white"
+        >
+          <Icon name="stethoscope" class="h-4 w-4 text-teal-600" />
+          Abrir Lumen Web
+          <Icon
+            name="arrow-up-right"
+            class="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+          />
+        </a>
+      </div>
+
+      <p class="mt-4 text-xs font-medium text-ink-400">
+        ¿Sos tutor? Entrá a la app. ¿Tenés una clínica? Entrá al panel.
+      </p>
+    </div>
+  </section>
+
+  <!-- Lumen App -->
+  <AppShowcase />
+
+  <!-- Lumen Web -->
+  <Platform />
+
+  <!-- Módulos del CRM -->
+  <section
+    id="modulos"
+    aria-labelledby="modules-title"
+    class="mx-auto max-w-7xl px-6 pb-16 md:pb-24"
+  >
+    <div class="mx-auto max-w-2xl text-center">
+      <span class="text-[11px] font-bold tracking-[0.22em] text-teal-600 uppercase">
+        Lumen Web en detalle
+      </span>
+      <h2
+        id="modules-title"
+        class="mt-3 font-display text-3xl leading-tight tracking-tight text-ink-900 sm:text-4xl md:text-5xl"
+      >
+        Todo el CRM, módulo por módulo
+      </h2>
+      <p class="mt-4 text-base leading-relaxed text-ink-500">
+        Las herramientas que el equipo veterinario usa todos los días, en un
+        mismo panel. Lo que se registra acá también llega a Lumen App.
+      </p>
+    </div>
+
+    <div class="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        modules.map((module, index) => (
+          <article class="group relative h-full rounded-3xl border border-ink-900/6 bg-white p-6 shadow-[0_1px_0_rgba(11,43,46,0.03)] transition-all duration-300 hover:-translate-y-1 hover:border-teal-200 hover:shadow-[0_28px_60px_-32px_rgba(11,43,46,0.35)]">
+            <div class="flex items-start justify-between gap-4">
+              <span class="grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-teal-50 to-teal-100 text-teal-700 shadow-inner transition-colors group-hover:from-teal-500 group-hover:to-teal-600 group-hover:text-white">
+                <Icon name={module.icon} class="h-6 w-6" />
+              </span>
+              <span
+                class="font-display text-2xl leading-none text-ink-200"
+                aria-hidden="true"
+              >
+                {String(index + 1).padStart(2, "0")}
+              </span>
+            </div>
+            <h3 class="mt-5 text-lg font-bold tracking-tight text-ink-900">
+              {module.title}
+            </h3>
+            <p class="mt-2 text-sm leading-relaxed text-ink-500">
+              {module.description}
+            </p>
+          </article>
+        ))
+      }
+    </div>
+
+    <div class="mt-8 flex justify-center">
+      <a
+        href={productUrls.web}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group inline-flex items-center gap-2 rounded-full bg-ink-900 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-ink-900/20 transition-all hover:-translate-y-0.5 hover:bg-teal-700"
+      >
+        Probar Lumen Web
+        <Icon
+          name="arrow-up-right"
+          class="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+        />
+      </a>
+    </div>
+  </section>
+
+  <!-- Seguridad -->
+  <section
+    id="seguridad"
+    aria-labelledby="security-title"
+    class="border-y border-ink-900/6 bg-white"
+  >
+    <div
+      class="mx-auto grid max-w-7xl grid-cols-1 items-start gap-12 px-6 py-16 md:py-24 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16"
+    >
+      <div class="max-w-lg">
+        <span
+          class="inline-flex items-center gap-2 rounded-full border border-ink-900/10 bg-cream px-3 py-1.5 text-[10px] font-bold tracking-[0.2em] text-ink-700 uppercase"
+        >
+          <Icon name="shield-check" class="h-3.5 w-3.5 text-teal-600" />
+          Datos y seguridad
+        </span>
+        <h2
+          id="security-title"
+          class="mt-5 font-display text-3xl leading-tight tracking-tight text-ink-900 sm:text-4xl md:text-5xl"
+        >
+          La historia clínica,
+          <span class="text-teal-600 italic"> en buenas manos.</span>
+        </h2>
+        <p class="mt-5 text-base leading-relaxed text-ink-500">
+          La información de una mascota es sensible. Por eso Lumen separa
+          accesos, cifra los datos y respalda todo en la nube: la clínica
+          trabaja tranquila y el tutor sabe que su información está protegida.
+        </p>
+
+        <div class="mt-7 flex flex-col gap-3 sm:flex-row">
+          <a
+            href="/#faq"
+            class="inline-flex items-center justify-center gap-2 rounded-full bg-ink-900 px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-teal-700"
+          >
+            Ver preguntas frecuentes
+          </a>
+          <a
+            href="mailto:sanfelipe@gmail.com"
+            class="inline-flex items-center justify-center gap-2 rounded-full border border-ink-900/15 bg-white px-5 py-3 text-sm font-bold text-ink-800 transition-colors hover:border-ink-900/30"
+          >
+            <Icon name="mail" class="h-4 w-4 text-teal-600" />
+            Hablar con el equipo
+          </a>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        {
+          security.map((item) => (
+            <article class="rounded-3xl border border-ink-900/6 bg-cream/70 p-6">
+              <span class="grid h-11 w-11 place-items-center rounded-2xl bg-white text-teal-700 shadow-sm ring-1 ring-ink-900/5">
+                <Icon name={item.icon} class="h-5 w-5" />
+              </span>
+              <h3 class="mt-4 text-base font-bold text-ink-900">{item.title}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-ink-500">
+                {item.description}
+              </p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <CTA />
+</BaseLayout>

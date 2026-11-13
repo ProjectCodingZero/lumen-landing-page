@@ -1,20 +1,21 @@
 ---
 import Icon from "../../components/ui/Icon.astro";
+import { productUrls } from "../../data/products.ts";
 
 const year = new Date().getFullYear();
 
-const exploreLinks = [
-  { href: "/", label: "Inicio" },
-  { href: "/services/", label: "Servicios" },
-  { href: "/about/", label: "Nosotros" },
-  { href: "/services/#turnos", label: "Reservar turno" },
+const productLinks = [
+  { href: "/productos/#app", label: "Lumen App · Tutores" },
+  { href: "/productos/#web", label: "Lumen Web · Clínicas" },
+  { href: "/productos/#modulos", label: "Módulos del CRM" },
+  { href: "/productos/#seguridad", label: "Datos y seguridad" },
 ];
 
-const serviceLinks = [
-  { href: "/services/#consultas", label: "Consultas médicas" },
-  { href: "/services/#cirugia", label: "Cirugía y laboratorio" },
-  { href: "/services/#vacunacion", label: "Vacunación" },
-  { href: "/services/#estetica", label: "Estética" },
+const companyLinks = [
+  { href: "/about/", label: "Nosotros" },
+  { href: "/productos/", label: "Productos" },
+  { href: "/#faq", label: "Preguntas frecuentes" },
+  { href: "/about/#contacto", label: "Contacto" },
 ];
 ---
 
@@ -35,14 +36,45 @@ const serviceLinks = [
             <span
               class="mt-1 block text-[9px] font-bold tracking-[0.26em] text-white/40 uppercase"
             >
-              Veterinaria · Tucumán
+              Ecosistema veterinario
             </span>
           </span>
         </a>
         <p class="mt-5 max-w-xs text-sm leading-relaxed text-white/55">
-          Cuidar mejor, gestionar más simple. Una plataforma pensada para
-          conectar a las familias con el mejor cuidado veterinario.
+          Un ecosistema que conecta a las familias con su clínica: Lumen App
+          para tutores y Lumen Web para equipos veterinarios, con la misma
+          historia clínica.
         </p>
+
+        <div class="mt-6 flex flex-col gap-2">
+          <a
+            href={productUrls.app}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group inline-flex items-center gap-2 text-sm font-semibold text-white/70 transition-colors hover:text-white"
+          >
+            <Icon name="paw" class="h-4 w-4 text-teal-300" />
+            Abrir Lumen App
+            <Icon
+              name="arrow-up-right"
+              class="h-3.5 w-3.5 text-white/40 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            />
+          </a>
+          <a
+            href={productUrls.web}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group inline-flex items-center gap-2 text-sm font-semibold text-white/70 transition-colors hover:text-white"
+          >
+            <Icon name="stethoscope" class="h-4 w-4 text-teal-300" />
+            Abrir Lumen Web
+            <Icon
+              name="arrow-up-right"
+              class="h-3.5 w-3.5 text-white/40 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            />
+          </a>
+        </div>
+
         <div class="mt-6 flex items-center gap-3">
           <a
             href="https://www.instagram.com/"
@@ -74,13 +106,13 @@ const serviceLinks = [
         </div>
       </div>
 
-      <nav aria-label="Enlaces del sitio" class="lg:col-span-2">
+      <nav aria-label="Productos" class="lg:col-span-3">
         <h2 class="text-[11px] font-bold tracking-[0.2em] text-white/40 uppercase">
-          Explorar
+          Productos
         </h2>
         <ul class="mt-4 space-y-2.5 text-sm">
           {
-            exploreLinks.map((link) => (
+            productLinks.map((link) => (
               <li>
                 <a
                   href={link.href}
@@ -94,13 +126,13 @@ const serviceLinks = [
         </ul>
       </nav>
 
-      <nav aria-label="Servicios" class="lg:col-span-3">
+      <nav aria-label="Compañía" class="lg:col-span-2">
         <h2 class="text-[11px] font-bold tracking-[0.2em] text-white/40 uppercase">
-          Servicios
+          Compañía
         </h2>
         <ul class="mt-4 space-y-2.5 text-sm">
           {
-            serviceLinks.map((link) => (
+            companyLinks.map((link) => (
               <li>
                 <a
                   href={link.href}
@@ -143,7 +175,7 @@ const serviceLinks = [
           </li>
           <li class="flex items-start gap-2.5">
             <Icon name="clock" class="mt-0.5 h-4 w-4 shrink-0 text-teal-300" />
-            <span class="text-white/60">Lunes a sábado · 8 a 20 h</span>
+            <span class="text-white/60">Soporte: lun a vie · 9 a 18 h</span>
           </li>
         </ul>
       </div>
@@ -153,7 +185,7 @@ const serviceLinks = [
       class="mt-12 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-[11px] text-white/40 sm:flex-row"
     >
       <p>
-        © {year} Lumen Veterinaria · San Miguel de Tucumán, Argentina
+        © {year} Lumen · Ecosistema veterinario · San Miguel de Tucumán, Argentina
       </p>
       <p class="flex items-center gap-1.5">
         Hecho con cuidado en Tucumán

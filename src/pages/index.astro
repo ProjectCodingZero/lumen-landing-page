@@ -1,25 +1,56 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/landing/Hero.astro";
+import Ecosystem from "../components/landing/Ecosystem.astro";
 import Metrics from "../components/landing/Metrics.astro";
 import Features from "../components/landing/Features.astro";
+import AppShowcase from "../components/landing/AppShowcase.astro";
 import Platform from "../components/landing/Platform.astro";
 import Steps from "../components/landing/Steps.astro";
 import Testimonials from "../components/landing/Testimonials.astro";
 import FAQ from "../components/landing/FAQ.astro";
 import CTA from "../components/landing/CTA.astro";
 import { faqs } from "../data/faqs.ts";
+import { productUrls } from "../data/products.ts";
 
-const title = "Lumen | Clínica veterinaria y gestión integral en Tucumán";
+const title = "Lumen | La plataforma que conecta veterinarias y familias";
 const description =
-  "Turnos online, historia clínica digital y gestión para tu clínica veterinaria en San Miguel de Tucumán. Cuidar mejor, gestionar más simple con Lumen.";
+  "Lumen App para tutores y Lumen Web para clínicas: turnos, historia clínica compartida, recordatorios y gestión veterinaria en un solo ecosistema.";
 
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "Lumen Veterinaria",
+  name: "Lumen",
   url: "https://lumen-soft.app/",
   inLanguage: "es-AR",
+  publisher: {
+    "@id": "https://lumen-soft.app/#organizacion",
+  },
+};
+
+const appSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Lumen App",
+  applicationCategory: "HealthApplication",
+  operatingSystem: "iOS, Android",
+  description:
+    "App para tutores: turnos, historia clínica compartida, vacunas y recordatorios de cada mascota.",
+  url: productUrls.app,
+  publisher: {
+    "@id": "https://lumen-soft.app/#organizacion",
+  },
+};
+
+const webSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Lumen Web",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web",
+  description:
+    "CRM veterinario para clínicas: agenda, pacientes, tutores, inventario, especialistas y reportes.",
+  url: productUrls.web,
   publisher: {
     "@id": "https://lumen-soft.app/#organizacion",
   },
@@ -42,11 +73,13 @@ const faqSchema = {
 <BaseLayout
   title={title}
   description={description}
-  jsonLd={[websiteSchema, faqSchema]}
+  jsonLd={[websiteSchema, appSchema, webSchema, faqSchema]}
 >
   <Hero />
   <Metrics />
+  <Ecosystem />
   <Features />
+  <AppShowcase />
   <Platform />
   <Steps />
   <Testimonials />

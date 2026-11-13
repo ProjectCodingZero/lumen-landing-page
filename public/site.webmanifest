@@ -1,7 +1,7 @@
 {
-  "name": "Lumen Veterinaria",
+  "name": "Lumen · Ecosistema veterinario",
   "short_name": "Lumen",
-  "description": "Plataforma integral de gestión veterinaria en San Miguel de Tucumán.",
+  "description": "Lumen App para tutores y Lumen Web para clínicas veterinarias: una historia clínica compartida.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#FBFAF7",

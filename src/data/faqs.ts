@@ -5,28 +5,33 @@ export interface Faq {
 
 export const faqs: Faq[] = [
   {
-    question: "¿Cómo reservo un turno en Lumen?",
+    question: "¿Lumen es una app o un CRM?",
     answer:
-      "Podés reservar desde la sección de servicios en menos de un minuto: elegís la especialidad, el día y el horario disponible, y recibís la confirmación con un recordatorio automático.",
+      "Las dos cosas. Lumen App está pensada para tutores y Lumen Web es el CRM para clínicas veterinarias. Ambos comparten la misma historia clínica, así que la información viaja con cada mascota.",
   },
   {
-    question: "¿Atienden urgencias veterinarias?",
+    question: "¿Cómo abro Lumen App?",
     answer:
-      "Sí. Contamos con acompañamiento y atención de urgencias de lunes a sábado. Para casos urgentes, te recomendamos llamar directamente al +54 9 381 233 5259.",
+      "Desde los botones de esta página. Lumen App está pensada para iOS y Android; si todavía no está publicada en tu tienda, escribinos y te avisamos en cuanto esté disponible.",
   },
   {
-    question: "¿Qué servicios veterinarios ofrecen?",
+    question: "¿Cómo empieza mi clínica a usar Lumen Web?",
     answer:
-      "Ofrecemos consultas médicas, cirugía y laboratorio, vacunación y prevención, y estética especializada, con seguimiento digital de cada paciente.",
+      "Ingresá a Lumen Web o escribinos a sanfelipe@gmail.com. Coordinamos una demo, configuramos la cuenta del equipo y migramos la información que ya tenés.",
   },
   {
-    question: "¿Cómo accedo a la historia clínica de mi mascota?",
+    question: "¿La información se comparte entre la app y el CRM?",
     answer:
-      "La historia clínica digital de tu mascota queda disponible para el equipo veterinario y para vos: consultas, vacunas, estudios y próximos controles en un solo lugar.",
+      "Sí. Cuando la clínica registra una consulta, una vacuna o un turno en Lumen Web, el tutor lo ve en Lumen App. Los recordatorios y las indicaciones también se sincronizan.",
   },
   {
-    question: "¿Lumen sirve para gestionar una clínica completa?",
+    question: "¿Qué módulos incluye Lumen Web?",
     answer:
-      "Sí. Lumen integra agenda, historia clínica, recordatorios, comunicación con tutores y reportes de gestión para que todo el equipo trabaje con la misma información.",
+      "Agenda y turnos, pacientes e historia clínica, tutores, especialistas, inventario y tratamientos, y reportes de gestión. Todo en un mismo panel para todo el equipo.",
+  },
+  {
+    question: "¿Cómo protegen los datos de las mascotas y las familias?",
+    answer:
+      "El acceso está separado por roles: cada persona ve solo lo que necesita. La información viaja cifrada y se respalda de forma periódica en la nube.",
   },
 ];

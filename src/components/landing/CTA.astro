@@ -1,5 +1,6 @@
 ---
 import Icon from "../ui/Icon.astro";
+import { productUrls } from "../../data/products.ts";
 ---
 
 <section
@@ -34,34 +35,42 @@ import Icon from "../ui/Icon.astro";
         id="cta-title"
         class="mt-5 font-display text-3xl leading-tight tracking-tight sm:text-4xl md:text-5xl"
       >
-        Tu clínica merece una experiencia
-        <span class="text-teal-200 italic"> a la altura.</span>
+        Elegí tu lado de
+        <span class="text-teal-200 italic">Lumen.</span>
       </h2>
       <p
         class="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-white/70 sm:text-base"
       >
-        Sumate a las familias y equipos que ya viven una forma más simple,
-        cercana y ordenada de cuidar.
+        Abrí la app si sos tutor o entrá al CRM si sos veterinaria. El resto
+        fluye solo, con la misma información para ambos.
       </p>
 
       <div
         class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row"
       >
         <a
-          href="/services/#turnos"
+          href={productUrls.app}
+          target="_blank"
+          rel="noopener noreferrer"
           class="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-bold text-ink-900 shadow-lg transition-all hover:-translate-y-0.5 hover:bg-teal-50 sm:w-auto"
         >
-          Reservar un turno
+          Abrir Lumen App
           <Icon
-            name="arrow-right"
-            class="h-4 w-4 transition-transform group-hover:translate-x-1"
+            name="arrow-up-right"
+            class="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
           />
         </a>
         <a
-          href="mailto:sanfelipe@gmail.com?subject=Quiero%20conocer%20Lumen"
-          class="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/25 px-6 py-3.5 text-sm font-bold text-white transition-colors hover:bg-white/10 sm:w-auto"
+          href={productUrls.web}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/25 px-6 py-3.5 text-sm font-bold text-white transition-colors hover:bg-white/10 sm:w-auto"
         >
-          Hablar con el equipo
+          Abrir Lumen Web
+          <Icon
+            name="arrow-up-right"
+            class="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+          />
         </a>
       </div>
 
