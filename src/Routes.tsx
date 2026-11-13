@@ -2,7 +2,7 @@ import { lazy, Suspense } from "react";
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import { LoadingFallback } from "@/shared/index.ts";
 // Import layouts
-import { AuthLayout, ErrorLayout, FullLayout } from "@/layout/index.ts";
+import { ErrorLayout, FullLayout } from "@/layout/index.ts";
 //Lazy load component for code splitting
 const HomeView = lazy(() =>
   import("@/view/index.ts")
@@ -76,16 +76,6 @@ export const Routes = createBrowserRouter([
             <AboutView />
           </Suspense>
         ),
-      },
-    ],
-  },
-  {
-    path: "/auth",
-    element: <AuthLayout />,
-    errorElement: <ErrorLayout />,
-    children: [
-      {
-        index: true,
       },
     ],
   },

@@ -1,10 +1,6 @@
-// Api
-export { instance } from "./api/axiosInstance.ts";
 // Config
 export { getConfig, loadConfig } from "./config/config.ts";
 
-// Context
-export { AuthProvider } from "./context/AuthContext.tsx";
 //Components
 export { Button } from "./components/Button.tsx";
 export { LoadingFallback } from "./components/LoadingFallback.tsx";
